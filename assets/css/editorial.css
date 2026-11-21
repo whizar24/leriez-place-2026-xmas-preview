@@ -673,6 +673,38 @@ header.site {
   color: var(--oxblood);
 }
 
+.craft {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 8px var(--gutter) var(--space);
+}
+.craft-item {
+  padding: 8px 28px;
+  text-align: center;
+  border-left: 1px solid var(--line);
+}
+.craft-item:first-child { border-left: none; padding-left: 0; }
+.craft-item:last-child { padding-right: 0; }
+.craft-item span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--champagne-deep);
+  margin-bottom: 8px;
+}
+.craft-item p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--espresso);
+}
+.craft-item span::after { content: " ·"; }
+
 .magazine {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -845,6 +877,20 @@ header.site {
   position: relative;
   z-index: 2;
 }
+.look-selected {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 14px;
+  padding: 7px 14px;
+  border: 1px solid var(--line-gold);
+  background: rgba(229, 201, 155, 0.14);
+  color: var(--champagne);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+}
+.look-selected[hidden] { display: none !important; }
 .booking-builder h2 { font-size: 34px; font-style: italic; margin: 6px 0 18px; }
 .field { margin: 16px 0; }
 .field > span, .field legend, .field label {
@@ -904,13 +950,41 @@ header.site {
 
 .ig {
   text-align: center;
-  padding: 40px 20px var(--space);
-  letter-spacing: 0.16em;
+  padding: 48px var(--gutter) var(--space);
+  border-top: 1px solid var(--line);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.ig-head {
+  display: inline-block;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   font-size: 12px;
-  border-top: 1px solid var(--line);
+  margin-bottom: 22px;
+  color: var(--espresso);
 }
 .ig a:hover { color: var(--oxblood); }
+.ig-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.ig-strip a {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  border-radius: 22px 22px 88px 22px;
+  background: #ead9c8;
+}
+.ig-strip a:nth-child(even) { border-radius: 88px 22px 22px 22px; }
+.ig-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 700ms var(--ease);
+}
+.ig-strip a:hover img { transform: scale(1.04); }
 
 footer.site {
   background: transparent;
@@ -943,9 +1017,18 @@ footer.site {
     grid-template-areas: "stage" "copy";
     min-height: 0;
   }
-  .collection-head, .showcase, .magazine, .booking, .footer-grid, .bento, .bento-card.wide {
+  .collection-head, .showcase, .magazine, .booking, .footer-grid, .bento, .bento-card.wide, .craft, .ig-strip {
     grid-template-columns: 1fr;
   }
+  .craft { gap: 0; }
+  .craft-item {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding: 18px 0;
+    text-align: left;
+  }
+  .craft-item:first-child { border-top: none; padding-top: 0; }
+  .ig-strip { grid-template-columns: 1fr 1fr; }
   .bento { grid-auto-rows: auto; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; padding-bottom: 8px; }
   .bento-card, .bento-card.tall, .bento-card.mid, .bento-card.sm, .bento-card.wide {
     grid-column: auto;

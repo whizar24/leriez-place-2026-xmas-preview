@@ -4,28 +4,28 @@
   var WA = "https://wa.me/2347049889936";
   var LOOKS = [
     {
-      name: "Santa’s gift",
+      name: "Festive Gift",
       unit: "14″ Vietnamese Bone-straight",
       spec: "300g · HD lace · ready-made",
       price: "₦320,000.00",
       href: "https://leriezplace.com/product/14-vietnamese-bonestraight-straight-300g/"
     },
     {
-      name: "Body wave",
+      name: "Body Wave",
       unit: "Blonde bouncy 12″ 100g",
       spec: "Donor bouncy · light density",
       price: "₦95,000.00",
       href: "https://leriezplace.com/product/blonde-bouncy-12-100g/"
     },
     {
-      name: "Lace close-up",
+      name: "HD Hairline",
       unit: "10″ Bonestraight 5×5 HD closure",
       spec: "5×5 HD lace closure",
       price: "₦100,000.00",
       href: "https://leriezplace.com/product/10-bonestraight-55-hd-lace-closure/"
     },
     {
-      name: "Espresso layers",
+      name: "Espresso Layers",
       unit: "Cajun brown",
       spec: "Layered espresso · human hair",
       price: "",
@@ -101,7 +101,7 @@
     }
 
     bindTablist(tabs, show);
-    show(0);
+    setSelected(buttons, 0);
   }
 
   function initMenu() {
@@ -160,7 +160,6 @@
       copy.textContent = buttons[index].getAttribute("data-copy") || "";
     });
     setSelected(buttons, 0);
-    copy.textContent = buttons[0].getAttribute("data-copy") || "";
   }
 
   function initBooking() {
@@ -247,11 +246,16 @@
       var name = (e.detail && e.detail.unit) || "";
       state.look = name;
       state.unit = "Shopping for a unit";
-      state.note = name ? "Book this look: " + name : state.note;
+      state.note = name || state.note;
       if (note) note.value = state.note;
       qsa("#unit-pills button").forEach(function (btn) {
         btn.setAttribute("aria-selected", btn.getAttribute("data-value") === state.unit ? "true" : "false");
       });
+      var banner = qs("#look-selected");
+      if (banner && name) {
+        banner.textContent = "Selected from lookbook: " + name;
+        banner.hidden = false;
+      }
       render();
       var section = qs("#book");
       if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
