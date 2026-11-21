@@ -55,62 +55,73 @@
     .btn.gold:hover { background: #d4b57a; }
     .btn.ghost { background: transparent; border: 1px solid rgba(247,239,229,.55); margin-left: 8px; }
     .btn.ghost:hover { border-color: var(--gold); color: var(--gold); }
-    .hero { position: relative; min-height: calc(100svh - 250px); max-height: calc(100svh - 230px); overflow: hidden; background: var(--noir); }
+    .stage { display: flex; flex-direction: column; min-height: calc(100svh - 118px); background: var(--noir); }
+    .hero { position: relative; flex: 1 1 auto; min-height: 0; overflow: hidden; background: var(--noir); }
     .hero img.slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; opacity: 0; transition: opacity 1.2s ease; }
     .hero img.slide.is-on { opacity: 1; }
-    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(33,23,21,.62) 0%, rgba(33,23,21,.18) 46%, transparent 72%), linear-gradient(180deg, rgba(33,23,21,.12) 0%, transparent 40%, rgba(33,23,21,.38) 100%); pointer-events: none; z-index: 2; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(33,23,21,.62) 0%, rgba(33,23,21,.18) 46%, transparent 72%), linear-gradient(180deg, rgba(33,23,21,.12) 0%, transparent 40%, rgba(33,23,21,.45) 100%); pointer-events: none; z-index: 2; }
     .xmas26-snow-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 4; }
-    .hero-copy { position: relative; z-index: 5; max-width: 460px; margin: 8vh 48px 28px; padding: 28px 30px; color: var(--ivory); background: rgba(33,23,21,.46); backdrop-filter: blur(18px); border: 1px solid rgba(198,163,109,.38); }
+    .hero-copy { position: relative; z-index: 5; max-width: 420px; margin: 6vh 40px 18px; padding: 22px 26px; color: var(--ivory); background: rgba(33,23,21,.46); backdrop-filter: blur(18px); border: 1px solid rgba(198,163,109,.38); }
     .kicker { letter-spacing: .24em; text-transform: uppercase; font-size: 11px; color: var(--gold); margin-bottom: 10px; }
-    .hero-copy h1 { font-size: clamp(42px, 6vw, 68px); line-height: 1.04; }
+    .hero-copy h1 { font-size: clamp(36px, 5.4vw, 62px); line-height: 1.04; }
     .hero-copy h1 em { font-style: italic; color: #f3e6d2; }
-    .hero-copy p { font-size: 16px; line-height: 1.6; max-width: 38ch; margin: 12px 0 0; }
-    .hero-copy .btn { margin-top: 20px; }
-    .tabs { display: flex; background: var(--noir); padding: 6px 12px 8px; }
-    .tabs button { flex: 1; background: none; border: none; color: var(--ivory); padding: 4px 6px 8px; cursor: pointer; border-bottom: 1px solid transparent; font-size: 12px; letter-spacing: .04em; }
+    .hero-copy p { font-size: 15px; line-height: 1.55; max-width: 38ch; margin: 10px 0 0; }
+    .hero-copy .btn { margin-top: 16px; }
+    .tabs { display: flex; background: transparent; padding: 0 18px 4px; position: relative; z-index: 6; }
+    .tabs button { flex: 1; background: none; border: none; color: rgba(247,239,229,.75); padding: 4px 6px 8px; cursor: pointer; border-bottom: 1px solid rgba(247,239,229,.15); font-size: 12px; letter-spacing: .04em; }
     .tabs button.on { border-bottom-color: var(--gold); color: var(--gold); }
     .tabs button b { font-family: "Cormorant Garamond", serif; color: var(--gold); font-weight: 500; margin-right: 6px; }
-    .circles { display: flex; justify-content: space-around; gap: 8px; padding: 14px 16px 16px; background: var(--cream); text-align: center; overflow-x: auto; }
-    .circles a { min-width: 72px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
-    .circles img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 6px; border: 1.5px solid rgba(198,163,109,.55); }
+    .circles { display: flex; justify-content: space-around; gap: 6px; margin: 0 18px 16px; padding: 10px 12px 12px; background: rgba(247,239,229,.94); text-align: center; overflow-x: auto; position: relative; z-index: 7; border: 1px solid rgba(198,163,109,.35); }
+    .circles a { min-width: 68px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
+    .circles img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 5px; border: 1.5px solid rgba(198,163,109,.55); }
     .circles a:hover img { border-color: var(--crimson); }
-    .band { background: var(--crimson); color: var(--ivory); text-align: center; padding: 48px 24px 44px; }
+    .edit { display: grid; grid-template-columns: minmax(240px, .78fr) 1.6fr; gap: 28px; align-items: end; max-width: 1180px; margin: -28px auto 0; padding: 0 24px 48px; position: relative; z-index: 2; }
+    .band { background: var(--crimson); color: var(--ivory); text-align: left; padding: 36px 28px; transform: rotate(-1.2deg); }
     .band .kicker { color: var(--gold); }
-    .band h2 { font-size: clamp(32px, 5vw, 48px); font-style: italic; margin: 8px 0; }
-    .band p { max-width: 36rem; margin: 0 auto; opacity: .92; }
-    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 1140px; margin: 32px auto 40px; padding: 0 24px; }
+    .band h2 { font-size: clamp(30px, 4vw, 46px); font-style: italic; margin: 8px 0; }
+    .band p { max-width: 22rem; opacity: .92; }
+    .grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; grid-template-rows: auto auto; gap: 14px; }
     .card { background: #fffdf8; overflow: hidden; position: relative; display: block; }
-    .card img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; display: block; transition: transform .5s ease; }
+    .card:first-child { grid-row: 1 / 3; }
+    .card img { width: 100%; aspect-ratio: 3 / 4; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .5s ease; }
+    .card:first-child img { aspect-ratio: 3 / 4.4; min-height: 420px; }
     .card:hover img { transform: scale(1.04); }
-    .card h3 { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; margin: 16px 16px 4px; }
-    .card p { margin: 0 16px 8px; font-size: 13px; color: #6b5348; line-height: 1.45; }
-    .explore { display: inline-block; margin: 0 16px 18px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--crimson); }
+    .card h3 { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; margin: 14px 14px 4px; }
+    .card p { margin: 0 14px 8px; font-size: 13px; color: #6b5348; line-height: 1.45; }
+    .explore { display: inline-block; margin: 0 14px 16px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--crimson); }
     .card:hover .explore { color: var(--evergreen); }
     .tag { position: absolute; top: 12px; left: 12px; background: var(--espresso); color: var(--ivory); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 9px; pointer-events: none; }
-    .special { display: grid; grid-template-columns: 1.15fr .85fr; background: var(--evergreen); color: var(--ivory); padding: 36px; gap: 28px; align-items: center; }
-    .special img { width: 100%; min-height: 360px; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid rgba(198,163,109,.4); }
-    .special-copy { display: flex; flex-direction: column; justify-content: center; }
-    .special-copy h2 { font-size: clamp(36px, 4vw, 52px); font-style: italic; margin: 8px 0 12px; }
+    .special { position: relative; background: var(--evergreen); color: var(--ivory); padding: 0; min-height: 420px; }
+    .special img { width: 100%; height: 520px; object-fit: cover; display: block; }
+    .special-copy { position: absolute; right: 6%; top: 14%; max-width: 420px; padding: 32px 30px; background: rgba(24,16,14,.78); backdrop-filter: blur(12px); border: 1px solid rgba(198,163,109,.4); transform: rotate(1deg); }
+    .special-copy h2 { font-size: clamp(34px, 4vw, 50px); font-style: italic; margin: 8px 0 12px; }
     .special-copy p { line-height: 1.6; max-width: 38ch; }
     .special-copy .btn { margin-top: 20px; align-self: flex-start; }
-    .trust { display: grid; grid-template-columns: 1fr 1fr 1fr; background: var(--espresso); color: var(--ivory); text-align: center; padding: 20px; font-size: 13px; letter-spacing: .04em; }
-    .rewards, .guides, .products { padding: 64px 28px; max-width: 1140px; margin: 0 auto; }
-    .rewards { background: #fffdf8; border-top: 1px solid rgba(198,163,109,.25); border-bottom: 1px solid rgba(198,163,109,.25); max-width: none; text-align: center; }
-    .rewards h2 { font-size: clamp(28px, 4vw, 42px); font-style: italic; }
-    .rewards p { max-width: 42ch; margin: 12px auto 22px; line-height: 1.6; }
+    .trust { display: grid; grid-template-columns: 1fr 1fr 1fr; background: var(--espresso); color: var(--ivory); text-align: center; padding: 16px; font-size: 13px; letter-spacing: .04em; }
+    .split { display: grid; grid-template-columns: 1.05fr .95fr; max-width: none; }
+    .rewards, .guides, .products { padding: 56px 36px; }
+    .rewards { background: #fffdf8; }
+    .rewards h2, .types h2, .guides h2, .products h2 { font-size: clamp(28px, 3.4vw, 40px); font-style: italic; }
+    .rewards p { max-width: 38ch; margin: 12px 0 22px; line-height: 1.6; }
     .section-kicker { color: var(--crimson); letter-spacing: .22em; text-transform: uppercase; font-size: 11px; margin-bottom: 8px; }
-    .types { background: var(--crimson); color: var(--ivory); text-align: center; padding: 56px 20px; }
-    .types h2 { font-size: 36px; font-style: italic; margin: 8px 0 22px; }
-    .type-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .types { background: var(--crimson); color: var(--ivory); padding: 56px 36px; display: flex; flex-direction: column; justify-content: center; }
+    .types .section-kicker, .types .kicker { color: var(--gold); }
+    .type-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
     .type-row a { border: 1px solid rgba(198,163,109,.45); padding: 9px 16px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
     .type-row a:hover { background: var(--gold); color: var(--espresso); border-color: var(--gold); }
-    .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 22px; }
+    .products { max-width: 1180px; margin: 0 auto; }
+    .products-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: auto auto; gap: 14px; margin-top: 22px; }
     .products-grid a { display: block; background: #fffdf8; }
+    .products-grid a:first-child { grid-row: 1 / 3; }
     .products-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+    .products-grid a:first-child img { aspect-ratio: 3 / 4.3; height: 100%; }
     .products-grid h3 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; padding: 12px 12px 16px; }
-    .guides p { max-width: 48ch; line-height: 1.6; margin-top: 10px; }
-    .booking { background: var(--espresso); color: var(--ivory); padding: 64px 28px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; }
-    .booking img { width: 100%; height: 320px; object-fit: cover; }
+    .lower { display: grid; grid-template-columns: .9fr 1.1fr; }
+    .guides { background: var(--cream); }
+    .guides p { max-width: 42ch; line-height: 1.6; margin-top: 10px; }
+    .booking { background: var(--espresso); color: var(--ivory); padding: 0; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
+    .booking > div { padding: 56px 36px; }
+    .booking img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; }
     .booking p { margin: 12px 0 20px; max-width: 38ch; line-height: 1.6; }
     .ig { text-align: center; padding: 48px 20px; background: var(--cream); letter-spacing: .14em; text-transform: uppercase; font-size: 12px; }
     .ig a:hover { color: var(--crimson); }
@@ -126,17 +137,22 @@
     @media (max-width: 980px) {
       .desktop-nav, .header-actions input, .header-actions a:not(.btn) { display: none; }
       .menu-toggle { display: block; }
-      .grid, .special, .products-grid, .booking, .footer-grid, .trust { grid-template-columns: 1fr 1fr; }
-      .hero-copy { margin: 6vh 16px 16px; padding: 20px 18px; }
-      .hero { min-height: calc(100svh - 280px); max-height: none; }
+      .stage { min-height: calc(100svh - 160px); }
+      .edit, .split, .lower, .booking, .footer-grid, .trust { grid-template-columns: 1fr; }
+      .grid, .products-grid { grid-template-columns: 1fr 1fr; }
+      .card:first-child, .products-grid a:first-child { grid-row: auto; }
+      .special-copy { position: relative; right: auto; top: auto; transform: none; max-width: none; margin: -48px 16px 24px; }
+      .hero-copy { margin: 5vh 16px 12px; padding: 18px 16px; }
+      .circles { margin: 0 10px 12px; }
       .mobile-bottom { display: grid; grid-template-columns: repeat(5, 1fr); position: fixed; bottom: 0; left: 0; right: 0; background: #211715; color: #F7EFE5; z-index: 50; text-align: center; font-size: 10px; padding: 8px 0 env(safe-area-inset-bottom); border-top: 1px solid rgba(198,163,109,.2); }
       .mobile-bottom a { display: flex; flex-direction: column; gap: 2px; }
       body { padding-bottom: 58px; }
     }
     @media (max-width: 640px) {
-      .grid, .special, .products-grid, .booking, .footer-grid, .trust { grid-template-columns: 1fr; }
+      .grid, .products-grid { grid-template-columns: 1fr; }
       .trust-item { white-space: normal; }
-      .hero-copy h1 { font-size: 36px; }
+      .hero-copy h1 { font-size: 34px; }
+      .band { transform: none; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -225,6 +241,7 @@
     </nav>
   </header>
 
+  <div class="stage">
   <section class="hero" id="hero" data-hero-snow>
     <img class="slide is-on" src="assets/hero/hero-1.jpg" alt="Santa gifting Leriez Place hair to a smiling customer" fetchpriority="high" />
     <img class="slide" src="assets/hero/hero-2.jpg" alt="Body wave wig, medium editorial portrait" />
@@ -249,7 +266,9 @@
     <a href="https://leriezplace.com/product-category/tools/"><img src="assets/circles/tools.jpg" alt="" />Tools</a>
     <a href="https://leriezplace.com/#booking"><img src="assets/circles/book.jpg" alt="" />Book</a>
   </div>
+  </div>
 
+  <section class="edit">
   <section class="band">
     <div class="kicker">The Christmas collection</div>
     <h2>Style for every story</h2>
@@ -261,6 +280,7 @@
     <a class="card" href="https://leriezplace.com/product-category/hair/"><span class="tag">Gift Ready</span><img src="assets/looks/look-3.jpg" alt="Deep wave close-up" /><h3>Deep wave</h3><p>Mistletoe is unemployed this year.</p><span class="explore">Explore →</span></a>
     <a class="card" href="https://leriezplace.com/product-category/hair/"><img src="assets/looks/look-4.jpg" alt="Espresso layers medium shot" /><h3>Espresso layers</h3><p>Gift yourself. The wrapping is the hairline.</p><span class="explore">Explore →</span></a>
   </div>
+  </section>
 
   <section class="special">
     <img src="assets/gift.jpg" alt="Santa gifting bags of hair" loading="lazy" />
@@ -277,6 +297,7 @@
     <div>Easy returns, 30 days</div>
   </div>
 
+  <div class="split">
   <section class="rewards" id="rewards">
     <div class="section-kicker">Free to join</div>
     <h2>Leriez Place Rewards Club</h2>
@@ -295,6 +316,7 @@
       <a href="https://leriezplace.com/product-category/curly/">Curly</a>
     </div>
   </section>
+  </div>
   <section class="products" id="shop">
     <div class="section-kicker">Best sellers</div>
     <h2>Featured wigs</h2>
@@ -305,6 +327,7 @@
       <a href="https://leriezplace.com/product-category/hair/"><img src="assets/looks/look-4.jpg" alt="Espresso layers unit" loading="lazy" /><h3>Espresso layers</h3></a>
     </div>
   </section>
+  <div class="lower">
   <section class="guides" id="guides">
     <div class="section-kicker">New here?</div>
     <h2>Help me choose</h2>
@@ -319,6 +342,7 @@
     </div>
     <img src="assets/hero/hero-2.jpg" alt="Body wave install look" loading="lazy" />
   </section>
+  </div>
   <section class="ig"><a href="https://www.instagram.com/leriez_place/">@leriez_place on Instagram</a></section>
   <footer>
     <div class="footer-grid">
