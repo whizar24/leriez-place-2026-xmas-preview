@@ -75,16 +75,14 @@
     .circles a { min-width: 68px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
     .circles img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 5px; border: 1.5px solid rgba(198,163,109,.55); }
     .circles a:hover img { border-color: var(--crimson); }
-    .edit { display: grid; grid-template-columns: minmax(240px, .78fr) 1.6fr; gap: 28px; align-items: end; max-width: 1180px; margin: -28px auto 0; padding: 0 24px 48px; position: relative; z-index: 2; }
-    .band { background: var(--crimson); color: var(--ivory); text-align: left; padding: 36px 28px; transform: rotate(-1.2deg); }
+    .edit { max-width: 1180px; margin: 28px auto 48px; padding: 0 24px; position: relative; z-index: 2; }
+    .band { background: var(--crimson); color: var(--ivory); text-align: center; padding: 28px 24px 30px; margin-bottom: 22px; }
     .band .kicker { color: var(--gold); }
     .band h2 { font-size: clamp(30px, 4vw, 46px); font-style: italic; margin: 8px 0; }
-    .band p { max-width: 22rem; opacity: .92; }
-    .grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; grid-template-rows: auto auto; gap: 14px; }
+    .band p { max-width: 36rem; margin: 0 auto; opacity: .92; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .card { background: #fffdf8; overflow: hidden; position: relative; display: block; }
-    .card:first-child { grid-row: 1 / 3; }
-    .card img { width: 100%; aspect-ratio: 3 / 4; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .5s ease; }
-    .card:first-child img { aspect-ratio: 3 / 4.4; min-height: 420px; }
+    .card img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 12%; display: block; transition: transform .5s ease; }
     .card:hover img { transform: scale(1.04); }
     .card h3 { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; margin: 14px 14px 4px; }
     .card p { margin: 0 14px 8px; font-size: 13px; color: #6b5348; line-height: 1.45; }
@@ -110,12 +108,11 @@
     .type-row a { border: 1px solid rgba(198,163,109,.45); padding: 9px 16px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
     .type-row a:hover { background: var(--gold); color: var(--espresso); border-color: var(--gold); }
     .products { max-width: 1180px; margin: 0 auto; }
-    .products-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: auto auto; gap: 14px; margin-top: 22px; }
+    .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
     .products-grid a { display: block; background: #fffdf8; }
-    .products-grid a:first-child { grid-row: 1 / 3; }
-    .products-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
-    .products-grid a:first-child img { aspect-ratio: 3 / 4.3; height: 100%; }
-    .products-grid h3 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; padding: 12px 12px 16px; }
+    .products-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 12%; display: block; }
+    .products-grid h3 { font-size: 12px; letter-spacing: .04em; text-transform: uppercase; padding: 12px 12px 4px; line-height: 1.35; }
+    .products-grid .price { display: block; padding: 0 12px 14px; font-size: 13px; color: var(--crimson); }
     .lower { display: grid; grid-template-columns: .9fr 1.1fr; }
     .guides { background: var(--cream); }
     .guides p { max-width: 42ch; line-height: 1.6; margin-top: 10px; }
@@ -140,7 +137,6 @@
       .stage { min-height: calc(100svh - 160px); }
       .edit, .split, .lower, .booking, .footer-grid, .trust { grid-template-columns: 1fr; }
       .grid, .products-grid { grid-template-columns: 1fr 1fr; }
-      .card:first-child, .products-grid a:first-child { grid-row: auto; }
       .special-copy { position: relative; right: auto; top: auto; transform: none; max-width: none; margin: -48px 16px 24px; }
       .hero-copy { margin: 5vh 16px 12px; padding: 18px 16px; }
       .circles { margin: 0 10px 12px; }
@@ -275,10 +271,10 @@
     <p>Festive units, custom lace, and gifts that actually get worn.</p>
   </section>
   <div class="grid">
-    <a class="card" href="https://leriezplace.com/product-category/hair/"><span class="tag">Holiday Favorite</span><img src="assets/looks/look-1.jpg" alt="Bone-straight close-up" /><h3>Bone-straight</h3><p>HD lace. Steal the dinner-table lighting.</p><span class="explore">Explore →</span></a>
-    <a class="card" href="https://leriezplace.com/product-category/hair/"><img src="assets/looks/look-2.jpg" alt="Body wave medium shot" /><h3>Body wave</h3><p>All I want for Christmas is this frontal.</p><span class="explore">Explore →</span></a>
-    <a class="card" href="https://leriezplace.com/product-category/hair/"><span class="tag">Gift Ready</span><img src="assets/looks/look-3.jpg" alt="Deep wave close-up" /><h3>Deep wave</h3><p>Mistletoe is unemployed this year.</p><span class="explore">Explore →</span></a>
-    <a class="card" href="https://leriezplace.com/product-category/hair/"><img src="assets/looks/look-4.jpg" alt="Espresso layers medium shot" /><h3>Espresso layers</h3><p>Gift yourself. The wrapping is the hairline.</p><span class="explore">Explore →</span></a>
+    <a class="card" href="https://leriezplace.com/product/14-vietnamese-bonestraight-straight-300g/"><span class="tag">Holiday Favorite</span><img src="assets/products/bonestraight.jpg" alt="14 inch Vietnamese bonestraight" /><h3>Bone-straight</h3><p>HD lace. Steal the dinner-table lighting.</p><span class="explore">Explore →</span></a>
+    <a class="card" href="https://leriezplace.com/product/18-warm-blonde-donor-bouncy-400g/"><img src="assets/products/blonde-bouncy.jpg" alt="Warm blonde donor bouncy" /><h3>Body wave</h3><p>All I want for Christmas is this frontal.</p><span class="explore">Explore →</span></a>
+    <a class="card" href="https://leriezplace.com/product/baby-curls-8/"><span class="tag">Gift Ready</span><img src="assets/products/baby-curls.jpg" alt="Baby curls unit" /><h3>Deep wave</h3><p>Mistletoe is unemployed this year.</p><span class="explore">Explore →</span></a>
+    <a class="card" href="https://leriezplace.com/product/cajun-brown/"><img src="assets/products/cajun-brown.jpg" alt="Cajun brown unit" /><h3>Espresso layers</h3><p>Gift yourself. The wrapping is the hairline.</p><span class="explore">Explore →</span></a>
   </div>
   </section>
 
@@ -321,10 +317,10 @@
     <div class="section-kicker">Best sellers</div>
     <h2>Featured wigs</h2>
     <div class="products-grid">
-      <a href="https://leriezplace.com/product-category/hair/"><img src="assets/looks/look-1.jpg" alt="Bone-straight unit" loading="lazy" /><h3>Bone-straight unit</h3></a>
-      <a href="https://leriezplace.com/product-category/hair/"><img src="assets/looks/look-2.jpg" alt="Body wave unit" loading="lazy" /><h3>Body wave unit</h3></a>
-      <a href="https://leriezplace.com/product-category/hair/"><img src="assets/looks/look-3.jpg" alt="Deep wave unit" loading="lazy" /><h3>Deep wave unit</h3></a>
-      <a href="https://leriezplace.com/product-category/hair/"><img src="assets/looks/look-4.jpg" alt="Espresso layers unit" loading="lazy" /><h3>Espresso layers</h3></a>
+      <a href="https://leriezplace.com/product/10-bonestraight-55-hd-lace-closure/"><img src="assets/products/hd-closure.jpg" alt="10 inch bonestraight 5x5 HD lace closure" loading="lazy" /><h3>10″ Bonestraight 5×5 HD closure</h3><span class="price">₦100,000.00</span></a>
+      <a href="https://leriezplace.com/product/14-vietnamese-bonestraight-straight-300g/"><img src="assets/products/bonestraight.jpg" alt="14 inch Vietnamese bonestraight 300g" loading="lazy" /><h3>14″ Vietnamese Bonestraight 300g</h3><span class="price">₦320,000.00</span></a>
+      <a href="https://leriezplace.com/product/blonde-bouncy-12-100g/"><img src="assets/products/blonde-12.jpg" alt="Blonde bouncy 12 inch 100g" loading="lazy" /><h3>Blonde bouncy 12″ 100g</h3><span class="price">₦95,000.00</span></a>
+      <a href="https://leriezplace.com/product/burgundy-glamour-waves/"><img src="assets/products/burgundy-waves.jpg" alt="Burgundy glamour waves" loading="lazy" /><h3>Burgundy glamour waves</h3><span class="price">₦420,000.00</span></a>
     </div>
   </section>
   <div class="lower">
