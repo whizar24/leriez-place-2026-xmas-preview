@@ -1,13 +1,15 @@
 :root {
-  --ivory: #f6f0e8;
+  --ivory: #faf6f1;
   --alabaster: #fbf7f1;
   --paper: #fffdf8;
-  --espresso: #211715;
+  --espresso: #1e1014;
   --charcoal: #2c221f;
   --oxblood: #6e2b35;
-  --burgundy: #5a2830;
-  --champagne: #c6a36d;
-  --champagne-deep: #a88852;
+  --burgundy: #4a1525;
+  --champagne: #e5c99b;
+  --champagne-deep: #c6a36d;
+  --blush: #e8cfcf;
+  --champagne-soft: #eadbc8;
   --line: rgba(44, 24, 20, 0.1);
   --line-gold: rgba(198, 163, 109, 0.45);
   --glass: rgba(33, 23, 21, 0.62);
@@ -62,7 +64,60 @@ body::after {
   height: min(60vw, 640px);
   bottom: 12%;
   left: -120px;
-  background: radial-gradient(circle, rgba(110, 43, 53, 0.16) 0%, rgba(110, 43, 53, 0) 72%);
+  background: radial-gradient(circle, rgba(74, 21, 37, 0.22) 0%, rgba(74, 21, 37, 0) 72%);
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.hero-split::before,
+.collection::before,
+.showcase::before,
+footer.site::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(8px);
+}
+.hero-split { position: relative; }
+.hero-split::before {
+  width: 520px;
+  height: 520px;
+  left: -80px;
+  top: 40px;
+  background: radial-gradient(circle, rgba(234, 219, 200, 0.55) 0%, rgba(232, 207, 207, 0.22) 42%, transparent 70%);
+}
+.collection { position: relative; }
+.collection::before {
+  width: 420px;
+  height: 420px;
+  right: 4%;
+  top: 10%;
+  background: radial-gradient(circle, rgba(232, 207, 207, 0.4) 0%, rgba(74, 21, 37, 0.12) 50%, transparent 72%);
+}
+.showcase { position: relative; }
+.showcase::before {
+  width: 380px;
+  height: 380px;
+  left: -40px;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(234, 219, 200, 0.35) 0%, transparent 70%);
+}
+footer.site { position: relative; }
+footer.site::before {
+  width: 520px;
+  height: 520px;
+  right: -80px;
+  top: -80px;
+  background: radial-gradient(circle, rgba(74, 21, 37, 0.18) 0%, rgba(234, 219, 200, 0.2) 46%, transparent 72%);
 }
 
 h1, h2, h3, h4 {
@@ -100,10 +155,43 @@ img { max-width: 100%; display: block; }
 .kicker {
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--oxblood);
   font-weight: 500;
+}
+
+.price,
+.look-card .price {
+  font-variant-numeric: tabular-nums;
+}
+
+.idx {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--oxblood);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.hair-spec {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #6b5348;
+  margin: 4px 0 6px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  animation: none;
+  transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 .btn {
@@ -456,9 +544,10 @@ header.site {
   height: 100%;
   object-fit: cover;
   object-position: center 12%;
-  transition: transform 250ms var(--ease);
+  will-change: transform;
+  transition: transform 700ms var(--ease);
 }
-.bento-card:hover img { transform: scale(1.045); }
+.bento-card:hover img { transform: scale(1.06) translate3d(0, -1.4%, 0); }
 .bento-meta { padding: 14px 4px 0; background: transparent; }
 .bento-card.wide .bento-meta {
   display: flex;
@@ -563,9 +652,10 @@ header.site {
   aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: center 12%;
-  transition: transform 250ms var(--ease);
+  will-change: transform;
+  transition: transform 700ms var(--ease);
 }
-.product-card:hover img { transform: scale(1.045); }
+.product-card:hover img { transform: scale(1.06) translate3d(0, -1.4%, 0); }
 .product-card h3 {
   font-family: var(--sans);
   font-size: 12px;
@@ -645,15 +735,47 @@ header.site {
 }
 .perk-body.is-open { display: block; }
 
+.mood-band {
+  background: #1e1014;
+  color: #faf6f1;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(229, 201, 155, 0.22);
+  border-bottom: 1px solid rgba(229, 201, 155, 0.22);
+}
+.mood-band::before,
+.mood-band::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+}
+.mood-band::before {
+  width: 520px;
+  height: 520px;
+  left: -140px;
+  top: -80px;
+  background: radial-gradient(circle, rgba(229, 201, 155, 0.16) 0%, transparent 70%);
+}
+.mood-band::after {
+  width: 460px;
+  height: 460px;
+  right: -100px;
+  bottom: -120px;
+  background: radial-gradient(circle, rgba(74, 21, 37, 0.55) 0%, transparent 70%);
+}
+.mood-band .kicker { color: #e5c99b; letter-spacing: 0.16em; }
+.mood-band h2 { color: #faf6f1; }
+
 .booking {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
   background: transparent;
-  color: var(--espresso);
+  color: #faf6f1;
   gap: 8px;
   padding: var(--space) 0;
   position: relative;
-  border-top: 1px solid var(--line);
+  z-index: 1;
 }
 .booking-visual {
   position: relative;
@@ -730,14 +852,14 @@ header.site {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--oxblood);
+  color: #e5c99b;
   margin-bottom: 8px;
 }
 .pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .pills button {
   background: transparent;
-  color: var(--espresso);
-  border: 1px solid var(--line);
+  color: #faf6f1;
+  border: 1px solid rgba(229, 201, 155, 0.28);
   padding: 8px 14px;
   font-size: 12px;
   cursor: pointer;
@@ -745,33 +867,39 @@ header.site {
   transition: background 250ms var(--ease), color 250ms var(--ease), border-color 250ms var(--ease);
 }
 .pills button[aria-selected="true"] {
-  border-color: var(--oxblood);
-  color: var(--ivory);
-  background: var(--espresso);
+  border-color: #e5c99b;
+  color: #1e1014;
+  background: #e5c99b;
 }
 .booking-builder input[type="date"],
 .booking-builder input[type="text"],
 .booking-builder textarea {
   width: 100%;
-  background: rgba(255, 252, 248, 0.55);
-  border: 1px solid var(--line);
-  color: var(--espresso);
+  background: rgba(250, 246, 241, 0.06);
+  border: 1px solid rgba(229, 201, 155, 0.28);
+  color: #faf6f1;
   padding: 10px 14px;
   border-radius: 18px;
 }
 .booking-builder textarea { min-height: 72px; resize: vertical; }
-.summary {
+.summary-card {
   margin-top: 22px;
-  padding: 16px 18px;
-  border: 1px solid var(--line);
-  background: rgba(255, 252, 248, 0.55);
+  padding: 18px 20px 20px;
+  border: 1px solid rgba(229, 201, 155, 0.28);
+  background: rgba(250, 246, 241, 0.05);
+  border-radius: 22px;
+}
+.summary {
+  margin-top: 10px;
   font-size: 14px;
   white-space: pre-wrap;
-  border-radius: 22px;
+  color: #faf6f1;
+  font-variant-numeric: tabular-nums;
 }
 .booking-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .booking-builder .btn.light {
-  color: var(--espresso);
+  color: #faf6f1;
+  border-color: rgba(229, 201, 155, 0.4);
 }
 
 .ig {
@@ -871,5 +999,6 @@ footer.site {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-arch img.slide, .bento-card img, .product-card img, .explore, .btn, .pills button { transition: none; }
+  .hero-arch img.slide, .bento-card img, .product-card img, .explore, .btn, .pills button, .reveal { transition: none; }
+  .reveal { opacity: 1; transform: none; }
 }

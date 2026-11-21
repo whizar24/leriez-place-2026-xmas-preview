@@ -169,7 +169,7 @@
 
     var state = {
       service: "HD Lace Wig Install",
-      unit: "I'm bringing a Leriez unit",
+      unit: "Bringing a Leriez unit",
       look: "",
       date: "",
       slot: "Morning 10am–1pm",
@@ -237,7 +237,7 @@
           if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(text);
             copyBtn.textContent = "Copied";
-            setTimeout(function () { copyBtn.textContent = "Copy summary"; }, 1600);
+            setTimeout(function () { copyBtn.textContent = "Copy Details"; }, 1600);
           }
         };
       }
@@ -246,13 +246,13 @@
     document.addEventListener("leriez:book-look", function (e) {
       var name = (e.detail && e.detail.unit) || "";
       state.look = name;
+      state.unit = "Shopping for a unit";
       state.note = name ? "Book this look: " + name : state.note;
-      if (note) {
-        note.value = state.note;
-      }
-      var buy = qs('#unit-pills [data-value="I\'m buying a new unit"]');
-      if (buy) buy.click();
-      else render();
+      if (note) note.value = state.note;
+      qsa("#unit-pills button").forEach(function (btn) {
+        btn.setAttribute("aria-selected", btn.getAttribute("data-value") === state.unit ? "true" : "false");
+      });
+      render();
       var section = qs("#book");
       if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
     });
@@ -296,6 +296,31 @@
     });
   }
 
+  function initReveals() {
+    var items = qsa(".bento-card, .product-card");
+    if (!items.length) return;
+    items.forEach(function (el, i) {
+      el.classList.add("reveal");
+      el.style.transitionDelay = (i % 4) * 80 + "ms";
+    });
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      items.forEach(function (el) { el.classList.add("is-in"); });
+      return;
+    }
+    if (!("IntersectionObserver" in window)) {
+      items.forEach(function (el) { el.classList.add("is-in"); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.16, rootMargin: "0px 0px -8% 0px" });
+    items.forEach(function (el) { observer.observe(el); });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initHero();
     initMenu();
@@ -305,5 +330,6 @@
     initBooking();
     initHash();
     initMobileNav();
+    initReveals();
   });
 })();

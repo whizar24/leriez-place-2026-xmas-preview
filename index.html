@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/editorial.css" />
 </head>
 <body>
+  <div class="grain" aria-hidden="true"></div>
   <a class="skip" href="#collection">Skip to collection</a>
   <div class="ribbon">The Christmas Edit · complimentary holiday gift wrapping &amp; priority festive delivery on selected units</div>
 
@@ -132,7 +133,9 @@
           <img src="assets/products/bonestraight.jpg" alt="14 inch Vietnamese bonestraight" />
         </div>
         <div class="bento-meta">
+          <span class="idx">01</span>
           <h3>14″ Vietnamese Bone-straight</h3>
+          <p class="hair-spec">HD lace · 300g · ready-made</p>
           <p>HD lace. Steal the dinner-table lighting.</p>
           <div class="price">₦320,000.00</div>
           <span class="gift-note">Gift-wrap eligible</span>
@@ -144,7 +147,9 @@
           <img src="assets/products/blonde-bouncy.jpg" alt="Warm blonde donor bouncy" />
         </div>
         <div class="bento-meta">
+          <span class="idx">02</span>
           <h3>Body wave — Warm blonde donor bouncy</h3>
+          <p class="hair-spec">Donor bouncy · 400g · 18″</p>
           <p>All I want for Christmas is this frontal.</p>
           <span class="explore">Explore →</span>
         </div>
@@ -155,7 +160,9 @@
           <img src="assets/products/baby-curls.jpg" alt="Baby curls unit" />
         </div>
         <div class="bento-meta">
+          <span class="idx">03</span>
           <h3>Deep wave — Baby curls</h3>
+          <p class="hair-spec">Deep wave · human hair · gift-wrap</p>
           <p>Mistletoe is unemployed this year.</p>
           <span class="gift-note">Gift-wrap eligible</span>
           <span class="explore">Explore →</span>
@@ -166,7 +173,9 @@
           <img src="assets/products/cajun-brown.jpg" alt="Cajun brown espresso layered unit" />
         </div>
         <div class="bento-meta">
+          <span class="idx">04</span>
           <h3>Espresso layers — Cajun brown</h3>
+          <p class="hair-spec">Layered espresso · 100% human hair</p>
           <p>Gift yourself. The wrapping is the hairline. Holiday note: we pack units for gifting with complimentary festive wrap on request.</p>
           <span class="gift-note">Gift-wrap eligible</span>
           <span class="explore">Explore →</span>
@@ -192,37 +201,51 @@
     <div class="product-grid" id="product-grid">
       <a class="product-card" data-tags="ready straight closures" href="https://leriezplace.com/product/10-bonestraight-55-hd-lace-closure/">
         <div class="media"><img src="assets/products/hd-closure.jpg" alt="10 inch bonestraight 5x5 HD lace closure" /></div>
+        <span class="idx">01</span>
         <h3>10″ Bonestraight 5×5 HD closure</h3>
+        <p class="hair-spec">5×5 HD lace · bonestraight</p>
         <span class="price">₦100,000.00</span>
       </a>
       <a class="product-card" data-tags="ready straight gift" href="https://leriezplace.com/product/14-vietnamese-bonestraight-straight-300g/">
         <div class="media"><img src="assets/products/bonestraight.jpg" alt="14 inch Vietnamese bonestraight 300g" /></div>
+        <span class="idx">02</span>
         <h3>14″ Vietnamese Bonestraight 300g</h3>
+        <p class="hair-spec">HD lace · 300g · gift-wrap</p>
         <span class="price">₦320,000.00</span>
       </a>
       <a class="product-card" data-tags="ready waves" href="https://leriezplace.com/product/blonde-bouncy-12-100g/">
         <div class="media"><img src="assets/products/blonde-12.jpg" alt="Blonde bouncy 12 inch 100g" /></div>
+        <span class="idx">03</span>
         <h3>Blonde bouncy 12″ 100g</h3>
+        <p class="hair-spec">Donor bouncy · 100g · 12″</p>
         <span class="price">₦95,000.00</span>
       </a>
       <a class="product-card" data-tags="ready waves gift" href="https://leriezplace.com/product/burgundy-glamour-waves/">
         <div class="media"><img src="assets/products/burgundy-waves.jpg" alt="Burgundy glamour waves" /></div>
+        <span class="idx">04</span>
         <h3>Burgundy glamour waves</h3>
+        <p class="hair-spec">Glamour waves · human hair</p>
         <span class="price">₦420,000.00</span>
       </a>
       <a class="product-card" data-tags="ready waves gift" href="https://leriezplace.com/product/18-warm-blonde-donor-bouncy-400g/">
         <div class="media"><img src="assets/products/blonde-bouncy.jpg" alt="18 inch warm blonde donor bouncy" /></div>
+        <span class="idx">05</span>
         <h3>Warm blonde donor bouncy 18″</h3>
+        <p class="hair-spec">Donor bouncy · 400g · 18″</p>
         <span class="spec">Custom / View options</span>
       </a>
       <a class="product-card" data-tags="ready waves gift" href="https://leriezplace.com/product/baby-curls-8/">
         <div class="media"><img src="assets/products/baby-curls.jpg" alt="Baby curls unit" /></div>
+        <span class="idx">06</span>
         <h3>Baby curls</h3>
+        <p class="hair-spec">Deep wave · gift-wrap eligible</p>
         <span class="spec">Custom / View options</span>
       </a>
       <a class="product-card" data-tags="ready waves" href="https://leriezplace.com/product/cajun-brown/">
         <div class="media"><img src="assets/products/cajun-brown.jpg" alt="Cajun brown unit" /></div>
+        <span class="idx">07</span>
         <h3>Cajun brown</h3>
+        <p class="hair-spec">Espresso layers · 100% human hair</p>
         <span class="spec">Custom / View options</span>
       </a>
     </div>
@@ -249,7 +272,8 @@
   </section>
 
   <div id="booking" class="anchor-alias" aria-hidden="true"></div>
-  <section class="booking wrap" id="book">
+  <section class="mood-band" id="book">
+  <div class="booking wrap">
     <div class="booking-visual">
       <img src="assets/hero/hero-2.jpg" alt="Body wave install look in studio light" />
       <div class="overlay">
@@ -276,16 +300,16 @@
           <button type="button" aria-selected="false" data-value="Custom Wig Fitting">Custom Wig Fitting</button>
           <button type="button" aria-selected="false" data-value="Bridal / Festive Styling">Bridal / Festive Styling</button>
           <button type="button" aria-selected="false" data-value="Wig Revamp &amp; Maintenance">Wig Revamp &amp; Maintenance</button>
-          <button type="button" aria-selected="false" data-value="1-on-1 Consultation">1-on-1 Consultation</button>
+          <button type="button" aria-selected="false" data-value="Consultation">Consultation</button>
         </div>
       </div>
 
       <div class="field">
         <span id="unit-label">Unit status</span>
         <div class="pills" id="unit-pills" role="group" aria-labelledby="unit-label">
-          <button type="button" aria-selected="true" data-value="I'm bringing a Leriez unit">I'm bringing a Leriez unit</button>
-          <button type="button" aria-selected="false" data-value="I'm buying a new unit">I'm buying a new unit</button>
-          <button type="button" aria-selected="false" data-value="Other human hair unit">Other human hair unit</button>
+          <button type="button" aria-selected="true" data-value="Bringing a Leriez unit">Bringing a Leriez unit</button>
+          <button type="button" aria-selected="false" data-value="Shopping for a unit">Shopping for a unit</button>
+          <button type="button" aria-selected="false" data-value="Other human hair">Other human hair</button>
         </div>
       </div>
 
@@ -312,12 +336,16 @@
         <textarea id="book-note" name="note" placeholder="Lace tint, density, or gifting timing"></textarea>
       </div>
 
-      <div class="summary" id="book-summary" aria-live="polite"></div>
-      <div class="booking-actions">
-        <a class="btn gold" id="book-whatsapp" href="https://leriezplace.com/#booking" target="_blank" rel="noopener">Send on WhatsApp</a>
-        <button class="btn light" type="button" id="book-copy">Copy summary</button>
+      <div class="summary-card">
+        <div class="kicker">Live booking summary</div>
+        <div class="summary" id="book-summary" aria-live="polite"></div>
+        <div class="booking-actions">
+          <a class="btn gold" id="book-whatsapp" href="https://wa.me/2347049889936" target="_blank" rel="noopener">Book on WhatsApp</a>
+          <button class="btn light" type="button" id="book-copy">Copy Details</button>
+        </div>
       </div>
     </form>
+  </div>
   </section>
 
   <section class="ig"><a href="https://www.instagram.com/leriez_place/">@leriez_place on Instagram</a></section>
