@@ -49,12 +49,74 @@
     .primary-menu > li > a:hover { color: var(--gold); }
     .header-actions { display: flex; align-items: center; gap: 14px; font-size: 13px; }
     .header-actions input { background: rgba(247,239,229,.08); border: 1px solid rgba(198,163,109,.28); color: var(--ivory); border-radius: 999px; padding: 7px 12px; width: 120px; font: inherit; }
-    .btn { display: inline-block; background: var(--crimson); color: var(--ivory); padding: 11px 20px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; border: 1px solid rgba(198,163,109,.45); transition: background .2s ease, color .2s ease, border-color .2s ease; }
-    .btn:hover { background: #5d212a; }
+    .btn {
+      position: relative;
+      display: inline-block;
+      background: var(--crimson);
+      color: var(--ivory);
+      padding: 12px 24px;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(198,163,109,.5);
+      border-radius: 999px;
+      overflow: visible;
+      isolation: isolate;
+      transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+    }
+    .btn:hover { background: #5d212a; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(33,23,21,.28); }
+    .header-actions .btn { padding: 8px 16px; }
+    .hero-copy .btn:not(.ghost)::before,
+    .special-copy .btn::before,
+    .rewards .btn::before,
+    .booking .btn::before {
+      content: "";
+      position: absolute;
+      left: 12%;
+      right: 16%;
+      top: -8px;
+      height: 14px;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 38% 85% at 18% 78%, #fff 58%, transparent 60%),
+        radial-gradient(ellipse 52% 100% at 50% 90%, #fff 62%, transparent 64%),
+        radial-gradient(ellipse 34% 80% at 82% 78%, #fff 58%, transparent 60%);
+      filter: drop-shadow(0 1px 1px rgba(255,255,255,.35));
+      transition: top .25s ease, filter .25s ease, opacity .25s ease;
+    }
+    .hero-copy .btn:not(.ghost)::after,
+    .special-copy .btn::after,
+    .rewards .btn::after,
+    .booking .btn::after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      top: 7px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.0);
+      box-shadow: 0 0 0 0 rgba(255,255,255,0);
+      transition: background .25s ease, box-shadow .25s ease;
+    }
+    .hero-copy .btn:not(.ghost):hover::before,
+    .special-copy .btn:hover::before,
+    .rewards .btn:hover::before,
+    .booking .btn:hover::before {
+      top: -10px;
+      filter: drop-shadow(0 0 8px rgba(255,255,255,.75));
+    }
+    .hero-copy .btn:not(.ghost):hover::after,
+    .special-copy .btn:hover::after,
+    .rewards .btn:hover::after,
+    .booking .btn:hover::after {
+      background: #fff;
+      box-shadow: 10px 6px 0 0 rgba(255,255,255,.85), -12px 10px 0 0 rgba(255,255,255,.55);
+    }
     .btn.gold { background: var(--gold); color: var(--espresso); border-color: var(--gold); }
     .btn.gold:hover { background: #d4b57a; }
     .btn.ghost { background: transparent; border: 1px solid rgba(247,239,229,.55); margin-left: 8px; }
-    .btn.ghost:hover { border-color: var(--gold); color: var(--gold); }
+    .btn.ghost:hover { border-color: var(--gold); color: var(--gold); background: rgba(198,163,109,.12); }
     .stage { display: flex; flex-direction: column; min-height: calc(100svh - 118px); background: var(--noir); }
     .hero { position: relative; flex: 1 1 auto; min-height: 0; overflow: hidden; background: var(--noir); }
     .hero img.slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; opacity: 0; transition: opacity 1.2s ease; }
@@ -156,7 +218,8 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .hero img.slide, .card img { transition: none; }
+      .hero img.slide, .card img, .btn { transition: none; }
+      .btn:hover { transform: none; }
     }
   </style>
 </head>
