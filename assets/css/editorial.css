@@ -1005,7 +1005,7 @@ footer.site {
 .legal { max-width: 1140px; margin: 0 auto; font-size: 12px; color: #6b5348; }
 
 .anchor-alias { display: block; height: 0; overflow: hidden; scroll-margin-top: 88px; }
-#book, #collection, #featured, #rewards, #hero { scroll-margin-top: 88px; }
+#book, #collection, #featured, #rewards, #hero, #booking-builder { scroll-margin-top: 120px; }
 
 .mobile-bottom { display: none; }
 

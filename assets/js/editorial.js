@@ -257,7 +257,7 @@
         banner.hidden = false;
       }
       render();
-      var section = qs("#book");
+      var section = qs("#booking-builder") || qs("#book");
       if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
