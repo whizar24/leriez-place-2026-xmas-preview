@@ -69,7 +69,7 @@
 
   function initHero() {
     var tabs = qs("#look-tabs");
-    var slides = qsa(".hero-stage img.slide");
+    var slides = qsa(".hero-arch img.slide");
     var unit = qs("#look-unit");
     var spec = qs("#look-spec");
     var price = qs("#look-price");
@@ -86,11 +86,18 @@
       if (unit) unit.textContent = look.unit;
       if (spec) spec.textContent = look.spec;
       if (price) {
-        price.textContent = look.price || "View unit for current pricing";
+        price.textContent = look.price || "Custom / View options";
         price.hidden = false;
       }
       if (view) view.href = look.href;
       if (book) book.href = "#book";
+    }
+
+    if (book) {
+      book.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        document.dispatchEvent(new CustomEvent("leriez:book-look", { detail: { unit: LOOKS[i].unit } }));
+      });
     }
 
     bindTablist(tabs, show);
@@ -163,6 +170,7 @@
     var state = {
       service: "HD Lace Wig Install",
       unit: "I'm bringing a Leriez unit",
+      look: "",
       date: "",
       slot: "Morning 10am–1pm",
       rewards: "",
@@ -207,9 +215,10 @@
       var lines = [
         "Hi Leriez Place — I'd like to book a festive install.",
         "Service: " + state.service,
-        "Unit: " + state.unit,
-        "Preferred: " + when + ", " + state.slot
+        "Unit: " + state.unit
       ];
+      if (state.look) lines.push("Look: " + state.look);
+      lines.push("Preferred: " + when + ", " + state.slot);
       if (state.rewards.trim()) lines.push("Rewards ID: " + state.rewards.trim());
       if (state.note.trim()) lines.push("Note: " + state.note.trim());
       lines.push("Studio: F283, M.I. Wushishi Estate, Chanchaga LGA, Minna, Niger State.");
@@ -233,6 +242,20 @@
         };
       }
     }
+
+    document.addEventListener("leriez:book-look", function (e) {
+      var name = (e.detail && e.detail.unit) || "";
+      state.look = name;
+      state.note = name ? "Book this look: " + name : state.note;
+      if (note) {
+        note.value = state.note;
+      }
+      var buy = qs('#unit-pills [data-value="I\'m buying a new unit"]');
+      if (buy) buy.click();
+      else render();
+      var section = qs("#book");
+      if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
 
     render();
   }
