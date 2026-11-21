@@ -525,31 +525,40 @@ header.site {
 
 .circle-rail {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  overflow: visible;
-  padding: 16px 0 0;
-  margin-top: 10px;
+  flex-wrap: nowrap;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 18px 0 6px;
+  margin-top: 8px;
   scrollbar-width: none;
   border-top: 1px solid var(--line);
 }
 .circle-rail::-webkit-scrollbar { display: none; }
 .circle-rail a {
-  min-width: 0;
-  text-align: left;
-  font-size: 10px;
+  min-width: 92px;
+  text-align: center;
+  font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--espresso);
-  padding: 10px 12px 0 0;
+  padding: 0;
+  flex: 0 0 auto;
 }
-.circle-rail a:not(:last-child)::after {
-  content: "·";
-  margin-left: 12px;
-  color: var(--champagne-deep);
+.circle-rail img {
+  display: block;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 10px;
+  border: 1px solid var(--line);
+  transition: border-color 250ms var(--ease), transform 250ms var(--ease);
 }
-.circle-rail img { display: none; }
 .circle-rail a:hover { color: var(--oxblood); }
+.circle-rail a:hover img {
+  border-color: var(--champagne-deep);
+  transform: scale(1.04);
+}
 
 .collection {
   padding: var(--space) 0;
