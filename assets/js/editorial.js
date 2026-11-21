@@ -4,7 +4,7 @@
   var WA = "https://wa.me/2347049889936";
   var LOOKS = [
     {
-      name: "Festive Gift",
+      name: "Festive Edit",
       unit: "14″ Vietnamese Bone-straight",
       spec: "300g · HD lace · ready-made",
       price: "₦320,000.00",
@@ -224,12 +224,13 @@
       return lines.join("\n");
     }
 
-    function render() {
+    function render(opts) {
+      opts = opts || {};
       var box = qs("#book-summary");
       var wa = qs("#book-whatsapp");
       var copyBtn = qs("#book-copy");
       var text = message();
-      if (box) box.textContent = text;
+      if (box && !opts.keepMarkup) box.textContent = text;
       if (wa) wa.href = WA + "?text=" + encodeURIComponent(text);
       if (copyBtn) {
         copyBtn.onclick = function () {
@@ -261,7 +262,7 @@
       if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
-    render();
+    render({ keepMarkup: true });
   }
 
   function initHash() {

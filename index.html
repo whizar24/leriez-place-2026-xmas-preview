@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/editorial.css?v=polish2" />
+  <link rel="stylesheet" href="assets/css/editorial.css?v=audit1" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -83,19 +83,19 @@
         <a class="btn ghost" href="#book">Book a Festive Install</a>
       </div>
       <div class="look-tabs" id="look-tabs" role="tablist" aria-label="Christmas looks">
-        <button type="button" role="tab" aria-selected="true" aria-controls="hero-stage" id="look-tab-1"><b>01</b><span>Festive Gift</span></button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="hero-stage" id="look-tab-2"><b>02</b><span>Body Wave</span></button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="hero-stage" id="look-tab-3"><b>03</b><span>HD Hairline</span></button>
-        <button type="button" role="tab" aria-selected="false" aria-controls="hero-stage" id="look-tab-4"><b>04</b><span>Espresso Layers</span></button>
+        <button type="button" role="tab" aria-selected="true" tabindex="0" aria-controls="hero-stage" id="look-tab-1"><b>01</b><span>Festive Edit</span></button>
+        <button type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="hero-stage" id="look-tab-2"><b>02</b><span>Body Wave</span></button>
+        <button type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="hero-stage" id="look-tab-3"><b>03</b><span>HD Hairline</span></button>
+        <button type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="hero-stage" id="look-tab-4"><b>04</b><span>Espresso Layers</span></button>
       </div>
       <nav class="circle-rail" aria-label="Shop shortcuts">
-        <a href="https://leriezplace.com/shop/"><img src="assets/circles/shop.jpg" alt="" />All</a>
-        <a href="https://leriezplace.com/product-category/hair/"><img src="assets/circles/hair.jpg" alt="" />Hair</a>
-        <a href="https://leriezplace.com/product-category/beauty/"><img src="assets/circles/beauty.jpg" alt="" />Beauty</a>
-        <a href="https://leriezplace.com/product-category/lashes/"><img src="assets/circles/lashes.jpg" alt="" />Lashes</a>
-        <a href="https://leriezplace.com/product-category/lipgloss/"><img src="assets/circles/lipgloss.jpg" alt="" />Lipgloss</a>
-        <a href="https://leriezplace.com/product-category/tools/"><img src="assets/circles/tools.jpg" alt="" />Tools</a>
-        <a href="#book"><img src="assets/circles/book.jpg" alt="" />Book</a>
+        <a href="https://leriezplace.com/shop/"><img src="assets/circles/shop.jpg" alt="" aria-hidden="true" />All</a>
+        <a href="https://leriezplace.com/product-category/hair/"><img src="assets/circles/hair.jpg" alt="" aria-hidden="true" />Hair</a>
+        <a href="https://leriezplace.com/product-category/beauty/"><img src="assets/circles/beauty.jpg" alt="" aria-hidden="true" />Beauty</a>
+        <a href="https://leriezplace.com/product-category/lashes/"><img src="assets/circles/lashes.jpg" alt="" aria-hidden="true" />Lashes</a>
+        <a href="https://leriezplace.com/product-category/lipgloss/"><img src="assets/circles/lipgloss.jpg" alt="" aria-hidden="true" />Lipgloss</a>
+        <a href="https://leriezplace.com/product-category/tools/"><img src="assets/circles/tools.jpg" alt="" aria-hidden="true" />Tools</a>
+        <a href="#book"><img src="assets/circles/book.jpg" alt="" aria-hidden="true" />Book</a>
       </nav>
     </div>
     <div class="hero-stage" id="hero-stage">
@@ -124,7 +124,7 @@
         <div class="kicker">The Christmas collection</div>
         <h2>Style for every story</h2>
       </div>
-      <p>Seasonal units, custom lace, and gift-ready packaging from the Minna studio.</p>
+      <p>Festive styling and gifting stories—donor units finished for dinners, portraits, and wrapped arrivals from the Minna studio.</p>
     </div>
     <div class="bento">
       <a class="bento-card tall" href="https://leriezplace.com/product/14-vietnamese-bonestraight-straight-300g/">
@@ -188,14 +188,13 @@
     <aside class="showcase-rail">
       <div class="kicker">100% human hair</div>
       <h2>Featured wigs</h2>
-      <p>Filter the floor by construction and texture. Prices shown are live shop figures in Naira — no placeholders.</p>
+      <p>Quick browsing by texture and construction. Live Naira prices from the shop—filter ready-made, closures, waves, and gift-ready units.</p>
       <div class="filter-pills" id="filters" role="tablist" aria-label="Filter featured units">
-        <button type="button" role="tab" aria-selected="true" data-filter="all">All</button>
-        <button type="button" role="tab" aria-selected="false" data-filter="ready">Ready-Made</button>
-        <button type="button" role="tab" aria-selected="false" data-filter="straight">Straight</button>
-        <button type="button" role="tab" aria-selected="false" data-filter="waves">Waves &amp; Curls</button>
-        <button type="button" role="tab" aria-selected="false" data-filter="closures">Closures</button>
-        <button type="button" role="tab" aria-selected="false" data-filter="gift">Gift Ready</button>
+        <button type="button" role="tab" aria-selected="true" tabindex="0" data-filter="all">All</button>
+        <button type="button" role="tab" aria-selected="false" tabindex="-1" data-filter="ready">Ready-Made</button>
+        <button type="button" role="tab" aria-selected="false" tabindex="-1" data-filter="closures">Closures</button>
+        <button type="button" role="tab" aria-selected="false" tabindex="-1" data-filter="waves">Waves &amp; Curls</button>
+        <button type="button" role="tab" aria-selected="false" tabindex="-1" data-filter="gift">Gift Ready</button>
       </div>
     </aside>
     <div class="product-grid" id="product-grid">
@@ -251,16 +250,10 @@
     </div>
   </section>
 
-  <section class="craft wrap" aria-label="Atelier guarantees">
-    <div class="craft-item"><span>01</span><p>Verified Donor &amp; Raw Hair</p></div>
-    <div class="craft-item"><span>02</span><p>Custom Bleached &amp; Plucked HD Lace</p></div>
-    <div class="craft-item"><span>03</span><p>Minna Studio Installs &amp; Worldwide Delivery</p></div>
-  </section>
-
   <section class="magazine wrap" id="rewards">
     <div class="magazine-visual">
       <img src="assets/gift.jpg" alt="Santa gifting bags of hair" />
-      <div class="caption">Holiday special · more joy, better edges</div>
+      <div class="caption">Holiday gifting · signature wrap from the studio</div>
     </div>
     <div class="magazine-panel">
       <div class="kicker">Free to join</div>
@@ -288,9 +281,9 @@
         <span class="walk-in">Walk-in space available</span>
         <p class="address">F283, M.I. Wushishi Estate, Chanchaga LGA, Minna, Niger State, Nigeria</p>
         <div class="guides" id="guide-tabs" role="tablist" aria-label="Help me choose">
-          <button type="button" role="tab" aria-selected="true" data-copy="HD lace is the thinnest, most undetectable option for hairlines under festive lighting. Best when you want a melt with tinted concealer and a natural part.">HD Lace Guide</button>
-          <button type="button" role="tab" aria-selected="false" data-copy="Density is how full the unit feels. Lighter densities sit naturally for daytime; 300g Vietnamese bonestraight is a statement length for dinners and portraits. Match weight and length to your lifestyle, not just the photograph.">Density &amp; Weight</button>
-          <button type="button" role="tab" aria-selected="false" data-copy="Ready-made units ship as styled. Custom fittings adjust cap, density, and lace tint on your head shape. Bring a Leriez unit or start from a consultation if you are unsure.">Custom vs. Ready-Made</button>
+          <button type="button" role="tab" aria-selected="true" tabindex="0" data-copy="HD lace is the thinnest, most undetectable option for hairlines under festive lighting. Best when you want a melt with tinted concealer and a natural part.">HD Lace Guide</button>
+          <button type="button" role="tab" aria-selected="false" tabindex="-1" data-copy="Density is how full the unit feels. Lighter densities sit naturally for daytime; 300g Vietnamese bonestraight is a statement length for dinners and portraits. Match weight and length to your lifestyle, not just the photograph.">Density &amp; Weight</button>
+          <button type="button" role="tab" aria-selected="false" tabindex="-1" data-copy="Ready-made units ship as styled. Custom fittings adjust cap, density, and lace tint on your head shape. Bring a Leriez unit or start from a consultation if you are unsure.">Custom vs. Ready-Made</button>
         </div>
         <p class="guide-copy" id="guide-copy">HD lace is the thinnest, most undetectable option for hairlines under festive lighting. Best when you want a melt with tinted concealer and a natural part.</p>
       </div>
@@ -351,7 +344,7 @@ Unit: Bringing a Leriez unit
 Preferred: date to confirm, Morning 10am–1pm
 Studio: F283, M.I. Wushishi Estate, Chanchaga LGA, Minna, Niger State.</div>
         <div class="booking-actions">
-          <a class="btn gold" id="book-whatsapp" href="https://wa.me/2347049889936" target="_blank" rel="noopener">Book on WhatsApp</a>
+          <a class="btn gold" id="book-whatsapp" href="https://wa.me/2347049889936?text=Hi%20Leriez%20Place%20%E2%80%94%20I'd%20like%20to%20book%20a%20festive%20install.%0AService%3A%20HD%20Lace%20Wig%20Install%0AUnit%3A%20Bringing%20a%20Leriez%20unit%0APreferred%3A%20date%20to%20confirm%2C%20Morning%2010am%E2%80%931pm%0AStudio%3A%20F283%2C%20M.I.%20Wushishi%20Estate%2C%20Chanchaga%20LGA%2C%20Minna%2C%20Niger%20State." target="_blank" rel="noopener">Book on WhatsApp</a>
           <button class="btn light" type="button" id="book-copy">Copy Details</button>
         </div>
       </div>
@@ -359,13 +352,19 @@ Studio: F283, M.I. Wushishi Estate, Chanchaga LGA, Minna, Niger State.</div>
   </div>
   </section>
 
+  <section class="craft wrap" aria-label="Studio standards">
+    <div class="craft-item"><span>01</span><p>Verified Human Hair</p></div>
+    <div class="craft-item"><span>02</span><p>Tailored Lace &amp; Fitting</p></div>
+    <div class="craft-item"><span>03</span><p>Minna Studio &amp; Priority Dispatch</p></div>
+  </section>
+
   <section class="ig wrap">
     <a class="ig-head" href="https://www.instagram.com/leriez_place/">@leriez_place</a>
     <div class="ig-strip" aria-label="Instagram lookbook">
-      <a href="https://www.instagram.com/leriez_place/"><img src="assets/hero/hero-2.jpg" alt="Body wave editorial portrait" /></a>
-      <a href="https://www.instagram.com/leriez_place/"><img src="assets/hero/hero-3.jpg" alt="HD lace hairline close-up" /></a>
+      <a href="https://www.instagram.com/leriez_place/"><img src="assets/products/bonestraight.jpg" alt="14 inch Vietnamese bonestraight unit" /></a>
+      <a href="https://www.instagram.com/leriez_place/"><img src="assets/products/blonde-bouncy.jpg" alt="Warm blonde donor bouncy unit" /></a>
+      <a href="https://www.instagram.com/leriez_place/"><img src="assets/products/baby-curls.jpg" alt="Baby curls deep wave unit" /></a>
       <a href="https://www.instagram.com/leriez_place/"><img src="assets/products/burgundy-waves.jpg" alt="Burgundy glamour waves unit" /></a>
-      <a href="https://www.instagram.com/leriez_place/"><img src="assets/gift.jpg" alt="Holiday gifting bags of hair" /></a>
     </div>
   </section>
 
@@ -412,7 +411,7 @@ Studio: F283, M.I. Wushishi Estate, Chanchaga LGA, Minna, Niger State.</div>
     <a href="https://leriezplace.com/cart/">🛒<span>Cart</span></a>
   </nav>
 
-  <script src="assets/js/hero-snow.js?v=polish2"></script>
-  <script src="assets/js/editorial.js?v=polish2"></script>
+  <script src="assets/js/hero-snow.js?v=audit1"></script>
+  <script src="assets/js/editorial.js?v=audit1"></script>
 </body>
 </html>
