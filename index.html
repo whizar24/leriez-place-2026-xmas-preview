@@ -4,181 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leriez Place — A Christmas Experience</title>
-  <meta name="description" content="Leriez Place Christmas 2026: premium wigs, festive gift wrapping, and professional installs." />
+  <meta name="description" content="Leriez Place Christmas 2026: premium wigs, festive gift wrapping, and professional installs in Minna, Nigeria." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --cream: #F7EFE5;
-      --ivory: #F7EFE5;
-      --espresso: #211715;
-      --noir: #211715;
-      --crimson: #762B36;
-      --velvet: #5c0914;
-      --deep: #762B36;
-      --gold: #C6A36D;
-      --evergreen: #183B30;
-      --ink: #211715;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    html, body { margin: 0; }
-    body { font-family: "DM Sans", sans-serif; background: var(--cream); color: var(--ink); }
-    h1, h2, h3, h4 { font-family: "Cormorant Garamond", serif; font-weight: 500; margin: 0; }
-    a { color: inherit; text-decoration: none; }
-    ul { list-style: none; margin: 0; padding: 0; }
-    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-    .trust-bar { background: var(--espresso); border-bottom: 1px solid rgba(198,163,109,.22); padding: 6px 28px; }
-    .trust-bar-inner { display: flex; justify-content: space-evenly; align-items: center; flex-wrap: wrap; gap: 8px 28px; font-size: 11px; font-weight: 500; letter-spacing: .04em; color: #e8dcc8; }
-    .trust-item { display: flex; align-items: center; gap: 7px; white-space: nowrap; }
-    .trust-item svg { width: 14px; height: 14px; color: var(--gold); flex-shrink: 0; }
-    .announce { background: var(--crimson); color: var(--ivory); text-align: center; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 7px 16px; }
-    header { position: sticky; top: 0; z-index: 30; }
-    .header-inner { background: rgba(33,23,21,.88); backdrop-filter: blur(14px); color: var(--ivory); display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 8px 16px; padding: 8px 20px; border-bottom: 1px solid rgba(198,163,109,.2); }
-    .logo img { display: block; height: 44px; width: auto; max-width: 168px; object-fit: contain; }
-    .desktop-nav { min-width: 0; }
-    .primary-menu { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px 16px; font-size: 12px; font-weight: 600; letter-spacing: .04em; }
-    .primary-menu > li { position: relative; }
-    .primary-menu > li > a { display: inline-flex; align-items: center; gap: 6px; padding: 10px 0; }
-    .has-sub > a::after { content: ""; width: 6px; height: 6px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-1px); opacity: .75; }
-    .sub-menu { position: absolute; top: calc(100% - 6px); left: 50%; transform: translateX(-50%); min-width: 210px; padding: 10px 8px; background: rgba(33,23,21,.97); border: 1px solid rgba(198,163,109,.28); border-radius: 4px; opacity: 0; visibility: hidden; pointer-events: none; z-index: 40; }
-    .has-sub:hover > .sub-menu, .has-sub:focus-within > .sub-menu { opacity: 1; visibility: visible; pointer-events: auto; }
-    .sub-menu a { display: block; padding: 10px 12px; border-radius: 2px; font-size: 13px; }
-    .sub-menu a:hover { background: rgba(198,163,109,.16); color: var(--gold); }
-    .primary-menu > li > a:hover { color: var(--gold); }
-    .header-actions { display: flex; align-items: center; gap: 14px; font-size: 13px; }
-    .header-actions input { background: rgba(247,239,229,.08); border: 1px solid rgba(198,163,109,.28); color: var(--ivory); border-radius: 999px; padding: 7px 12px; width: 120px; font: inherit; }
-    .btn { display: inline-block; background: var(--crimson); color: var(--ivory); padding: 11px 20px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; border: 1px solid rgba(198,163,109,.45); transition: background .2s ease, color .2s ease, border-color .2s ease; }
-    .btn:hover { background: #5d212a; }
-    .btn.gold { background: var(--gold); color: var(--espresso); border-color: var(--gold); }
-    .btn.gold:hover { background: #d4b57a; }
-    .btn.ghost { background: transparent; border: 1px solid rgba(247,239,229,.55); margin-left: 8px; }
-    .btn.ghost:hover { border-color: var(--gold); color: var(--gold); }
-    .stage { display: flex; flex-direction: column; min-height: calc(100svh - 118px); background: var(--noir); }
-    .hero { position: relative; flex: 1 1 auto; min-height: 0; overflow: hidden; background: var(--noir); }
-    .hero img.slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; opacity: 0; transition: opacity 1.2s ease; }
-    .hero img.slide.is-on { opacity: 1; }
-    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(33,23,21,.62) 0%, rgba(33,23,21,.18) 46%, transparent 72%), linear-gradient(180deg, rgba(33,23,21,.12) 0%, transparent 40%, rgba(33,23,21,.45) 100%); pointer-events: none; z-index: 2; }
-    .xmas26-snow-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 4; }
-    .hero-copy { position: relative; z-index: 5; max-width: 420px; margin: 6vh 40px 18px; padding: 22px 26px; color: var(--ivory); background: rgba(33,23,21,.46); backdrop-filter: blur(18px); border: 1px solid rgba(198,163,109,.38); }
-    .kicker { letter-spacing: .24em; text-transform: uppercase; font-size: 11px; color: var(--gold); margin-bottom: 10px; }
-    .hero-copy h1 { font-size: clamp(36px, 5.4vw, 62px); line-height: 1.04; }
-    .hero-copy h1 em { font-style: italic; color: #f3e6d2; }
-    .hero-copy p { font-size: 15px; line-height: 1.55; max-width: 38ch; margin: 10px 0 0; }
-    .hero-copy .btn { margin-top: 16px; }
-    .tabs { display: flex; background: transparent; padding: 0 18px 4px; position: relative; z-index: 6; }
-    .tabs button { flex: 1; background: none; border: none; color: rgba(247,239,229,.75); padding: 4px 6px 8px; cursor: pointer; border-bottom: 1px solid rgba(247,239,229,.15); font-size: 12px; letter-spacing: .04em; }
-    .tabs button.on { border-bottom-color: var(--gold); color: var(--gold); }
-    .tabs button b { font-family: "Cormorant Garamond", serif; color: var(--gold); font-weight: 500; margin-right: 6px; }
-    .circles { display: flex; justify-content: space-around; gap: 6px; margin: 0 18px 16px; padding: 10px 12px 12px; background: rgba(247,239,229,.94); text-align: center; overflow-x: auto; position: relative; z-index: 7; border: 1px solid rgba(198,163,109,.35); }
-    .circles a { min-width: 68px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
-    .circles img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 5px; border: 1.5px solid rgba(198,163,109,.55); }
-    .circles a:hover img { border-color: var(--crimson); }
-    .edit { max-width: 1180px; margin: 28px auto 48px; padding: 0 24px; position: relative; z-index: 2; }
-    .band { background: var(--crimson); color: var(--ivory); text-align: center; padding: 28px 24px 30px; margin-bottom: 22px; }
-    .band .kicker { color: var(--gold); }
-    .band h2 { font-size: clamp(30px, 4vw, 46px); font-style: italic; margin: 8px 0; }
-    .band p { max-width: 36rem; margin: 0 auto; opacity: .92; }
-    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-    .card { background: #fffdf8; overflow: hidden; position: relative; display: block; }
-    .card img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 12%; display: block; transition: transform .5s ease; }
-    .card:hover img { transform: scale(1.04); }
-    .card h3 { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; margin: 14px 14px 4px; }
-    .card p { margin: 0 14px 8px; font-size: 13px; color: #6b5348; line-height: 1.45; }
-    .explore { display: inline-block; margin: 0 14px 16px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--crimson); }
-    .card:hover .explore { color: var(--evergreen); }
-    .tag { position: absolute; top: 12px; left: 12px; background: var(--espresso); color: var(--ivory); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 9px; pointer-events: none; }
-    .special { position: relative; background: var(--evergreen); color: var(--ivory); padding: 0; min-height: 420px; }
-    .special img { width: 100%; height: 520px; object-fit: cover; display: block; }
-    .special-copy { position: absolute; right: 6%; top: 14%; max-width: 420px; padding: 32px 30px; background: rgba(24,16,14,.78); backdrop-filter: blur(12px); border: 1px solid rgba(198,163,109,.4); transform: rotate(1deg); }
-    .special-copy h2 { font-size: clamp(34px, 4vw, 50px); font-style: italic; margin: 8px 0 12px; }
-    .special-copy p { line-height: 1.6; max-width: 38ch; }
-    .special-copy .btn { margin-top: 20px; align-self: flex-start; }
-    .trust { display: grid; grid-template-columns: 1fr 1fr 1fr; background: var(--espresso); color: var(--ivory); text-align: center; padding: 16px; font-size: 13px; letter-spacing: .04em; }
-    .split { display: grid; grid-template-columns: 1.05fr .95fr; max-width: none; }
-    .rewards, .guides, .products { padding: 56px 36px; }
-    .rewards { background: #fffdf8; }
-    .rewards h2, .types h2, .guides h2, .products h2 { font-size: clamp(28px, 3.4vw, 40px); font-style: italic; }
-    .rewards p { max-width: 38ch; margin: 12px 0 22px; line-height: 1.6; }
-    .section-kicker { color: var(--crimson); letter-spacing: .22em; text-transform: uppercase; font-size: 11px; margin-bottom: 8px; }
-    .types { background: var(--crimson); color: var(--ivory); padding: 56px 36px; display: flex; flex-direction: column; justify-content: center; }
-    .types .section-kicker, .types .kicker { color: var(--gold); }
-    .type-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
-    .type-row a { border: 1px solid rgba(198,163,109,.45); padding: 9px 16px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
-    .type-row a:hover { background: var(--gold); color: var(--espresso); border-color: var(--gold); }
-    .products { max-width: 1180px; margin: 0 auto; }
-    .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
-    .products-grid a { display: block; background: #fffdf8; }
-    .products-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 12%; display: block; }
-    .products-grid h3 { font-size: 12px; letter-spacing: .04em; text-transform: uppercase; padding: 12px 12px 4px; line-height: 1.35; }
-    .products-grid .price { display: block; padding: 0 12px 14px; font-size: 13px; color: var(--crimson); }
-    .lower { display: grid; grid-template-columns: .9fr 1.1fr; }
-    .guides { background: var(--cream); }
-    .guides p { max-width: 42ch; line-height: 1.6; margin-top: 10px; }
-    .booking { background: var(--espresso); color: var(--ivory); padding: 0; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
-    .booking > div { padding: 56px 36px; }
-    .booking img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; }
-    .booking p { margin: 12px 0 20px; max-width: 38ch; line-height: 1.6; }
-    .ig { text-align: center; padding: 48px 20px; background: var(--cream); letter-spacing: .14em; text-transform: uppercase; font-size: 12px; }
-    .ig a:hover { color: var(--crimson); }
-    footer { background: var(--espresso); color: var(--ivory); padding: 48px 28px 28px; border-top: 1px solid rgba(198,163,109,.22); }
-    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 24px; max-width: 1140px; margin: 0 auto 24px; font-size: 13px; }
-    .footer-grid a, footer a { color: var(--gold); display: block; margin: 6px 0; }
-    .footer-logo { height: 64px; width: auto; max-width: 260px; }
-    .mobile-bottom { display: none; }
-    .menu-toggle { display: none; background: none; border: 1px solid rgba(198,163,109,.4); color: inherit; font: inherit; padding: 6px 10px; letter-spacing: .08em; text-transform: uppercase; font-size: 11px; }
-    .mobile-panel { display: none; background: var(--espresso); color: var(--ivory); padding: 12px 20px 18px; }
-    .mobile-panel.is-open { display: grid; gap: 10px; }
-    .mobile-panel a { padding: 8px 0; border-bottom: 1px solid rgba(198,163,109,.15); }
-    @media (max-width: 980px) {
-      .desktop-nav, .header-actions input, .header-actions a:not(.btn) { display: none; }
-      .menu-toggle { display: block; }
-      .stage { min-height: calc(100svh - 160px); }
-      .edit, .split, .lower, .booking, .footer-grid, .trust { grid-template-columns: 1fr; }
-      .grid, .products-grid { grid-template-columns: 1fr 1fr; }
-      .special-copy { position: relative; right: auto; top: auto; transform: none; max-width: none; margin: -48px 16px 24px; }
-      .hero-copy { margin: 5vh 16px 12px; padding: 18px 16px; }
-      .circles { margin: 0 10px 12px; }
-      .mobile-bottom { display: grid; grid-template-columns: repeat(5, 1fr); position: fixed; bottom: 0; left: 0; right: 0; background: #211715; color: #F7EFE5; z-index: 50; text-align: center; font-size: 10px; padding: 8px 0 env(safe-area-inset-bottom); border-top: 1px solid rgba(198,163,109,.2); }
-      .mobile-bottom a { display: flex; flex-direction: column; gap: 2px; }
-      body { padding-bottom: 58px; }
-    }
-    @media (max-width: 640px) {
-      .grid, .products-grid { grid-template-columns: 1fr; }
-      .trust-item { white-space: normal; }
-      .hero-copy h1 { font-size: 34px; }
-      .band { transform: none; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .hero img.slide, .card img { transition: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/editorial.css" />
 </head>
 <body>
-  <div class="trust-bar">
-    <div class="trust-bar-inner">
-      <span class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Free shipping over selected orders
-      </span>
-      <span class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
-        Secure checkout
-      </span>
-      <span class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        Easy returns — conditions apply
-      </span>
-      <span class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-1M13 8V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l4-4h2"/></svg>
-        Real support on WhatsApp
-      </span>
-    </div>
-  </div>
-  <div class="announce">The Christmas Edit · complimentary holiday gift wrapping &amp; priority festive delivery on selected units</div>
-  <header>
+  <a class="skip" href="#collection">Skip to collection</a>
+  <div class="ribbon">The Christmas Edit · complimentary holiday gift wrapping &amp; priority festive delivery on selected units</div>
+
+  <header class="site">
     <div class="header-inner">
       <a class="logo" href="https://leriezplace.com/" aria-label="Leriez Place">
         <img src="assets/brand/leriez-wordmark-transparent.png" alt="Leriez Place" />
@@ -209,138 +45,272 @@
               <li><a href="https://leriezplace.com/product-category/combs-brushes/">Combs &amp; Brushes</a></li>
             </ul>
           </li>
-          <li><a href="https://leriezplace.com/#booking">Services</a></li>
+          <li><a href="#book">Services</a></li>
           <li><a href="https://leriezplace.com/blog/">Blog</a></li>
-          <li><a href="https://leriezplace.com/#rewards">Rewards</a></li>
+          <li><a href="#rewards">Rewards</a></li>
         </ul>
       </nav>
       <div class="header-actions">
         <form action="https://leriezplace.com/" method="get">
           <input type="search" name="s" placeholder="Search" aria-label="Search products and services" />
         </form>
-        <a href="https://leriezplace.com/#rewards">♡ Rewards</a>
+        <a href="#rewards">♡ Rewards</a>
         <a href="https://leriezplace.com/cart/">Cart</a>
-        <a class="btn" href="https://leriezplace.com/#booking">Book</a>
+        <a class="btn" href="#book">Book</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-panel">Menu</button>
       </div>
     </div>
     <nav class="mobile-panel" id="mobile-panel" hidden>
       <a href="https://leriezplace.com/">Home</a>
       <a href="https://leriezplace.com/shop/">Shop</a>
-      <a href="https://leriezplace.com/product-category/hair/">Hair</a>
-      <a href="https://leriezplace.com/product-category/beauty/">Beauty</a>
-      <a href="https://leriezplace.com/product-category/tools/">Tools</a>
-      <a href="https://leriezplace.com/#booking">Services</a>
+      <a href="#collection">Collection</a>
+      <a href="#featured">Featured</a>
+      <a href="#book">Services</a>
       <a href="https://leriezplace.com/blog/">Blog</a>
-      <a href="https://leriezplace.com/#rewards">Rewards</a>
+      <a href="#rewards">Rewards</a>
       <a href="https://leriezplace.com/cart/">Cart</a>
     </nav>
   </header>
 
-  <div class="stage">
-  <section class="hero" id="hero" data-hero-snow>
-    <img class="slide is-on" src="assets/hero/hero-1.jpg" alt="Santa gifting Leriez Place hair to a smiling customer" fetchpriority="high" />
-    <img class="slide" src="assets/hero/hero-2.jpg" alt="Body wave wig, medium editorial portrait" />
-    <img class="slide" src="assets/hero/hero-3.jpg" alt="HD lace hairline close-up" />
-    <img class="slide" src="assets/hero/hero-4.jpg" alt="Espresso layered wig, medium portrait" />
+  <section class="hero-split" id="hero">
     <div class="hero-copy">
       <div class="kicker">A more magical season</div>
       <h1>Moments make <em>the hairline</em></h1>
-      <p id="line">Santa came through with the units. Beautiful hair, brighter days.</p>
-      <a class="btn" href="https://leriezplace.com/shop/">Shop the Christmas edit</a>
-      <a class="btn ghost" href="https://leriezplace.com/#booking">Book an install</a>
+      <p class="lede">Santa came through with the units. Beautiful hair, brighter days — HD lace, donor textures, and festive installs from Minna.</p>
+      <div class="hero-actions">
+        <a class="btn" href="https://leriezplace.com/shop/">Shop the Christmas Edit</a>
+        <a class="btn ghost" href="#book">Book a Festive Install</a>
+      </div>
+      <div class="look-tabs" id="look-tabs" role="tablist" aria-label="Christmas looks">
+        <button type="button" role="tab" aria-selected="true" aria-controls="hero-stage" id="look-tab-1"><b>01</b><span>Santa’s gift</span></button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="hero-stage" id="look-tab-2"><b>02</b><span>Body wave</span></button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="hero-stage" id="look-tab-3"><b>03</b><span>Lace close-up</span></button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="hero-stage" id="look-tab-4"><b>04</b><span>Espresso layers</span></button>
+      </div>
+      <nav class="circle-rail" aria-label="Shop shortcuts">
+        <a href="https://leriezplace.com/shop/"><img src="assets/circles/shop.jpg" alt="" />All</a>
+        <a href="https://leriezplace.com/product-category/hair/"><img src="assets/circles/hair.jpg" alt="" />Hair</a>
+        <a href="https://leriezplace.com/product-category/beauty/"><img src="assets/circles/beauty.jpg" alt="" />Beauty</a>
+        <a href="https://leriezplace.com/product-category/lashes/"><img src="assets/circles/lashes.jpg" alt="" />Lashes</a>
+        <a href="https://leriezplace.com/product-category/lipgloss/"><img src="assets/circles/lipgloss.jpg" alt="" />Lipgloss</a>
+        <a href="https://leriezplace.com/product-category/tools/"><img src="assets/circles/tools.jpg" alt="" />Tools</a>
+        <a href="#book"><img src="assets/circles/book.jpg" alt="" />Book</a>
+      </nav>
+    </div>
+    <div class="hero-stage" id="hero-stage" data-hero-snow>
+      <img class="slide is-on" src="assets/hero/hero-1.jpg" alt="Santa gifting Leriez Place hair to a smiling customer" fetchpriority="high" />
+      <img class="slide" src="assets/hero/hero-2.jpg" alt="Body wave wig, medium editorial portrait" />
+      <img class="slide" src="assets/hero/hero-3.jpg" alt="HD lace hairline close-up" />
+      <img class="slide" src="assets/hero/hero-4.jpg" alt="Espresso layered wig, medium portrait" />
+      <div class="hero-frame" aria-hidden="true"></div>
+      <aside class="look-card" aria-live="polite">
+        <div class="eyebrow">Featured in this look</div>
+        <h3 id="look-unit">14″ Vietnamese Bone-straight</h3>
+        <p class="spec" id="look-spec">300g · HD lace · ready-made</p>
+        <p class="price" id="look-price">₦320,000.00</p>
+        <div class="row">
+          <a class="btn gold" id="look-view" href="https://leriezplace.com/product/14-vietnamese-bonestraight-straight-300g/">View Unit</a>
+          <a class="btn light" id="look-book" href="#book">Book This Look</a>
+        </div>
+      </aside>
     </div>
   </section>
-  <div class="tabs" id="tabs" role="tablist" aria-label="Christmas looks"></div>
 
-  <div class="circles" aria-label="Shop shortcuts">
-    <a href="https://leriezplace.com/shop/"><img src="assets/circles/shop.jpg" alt="" />All</a>
-    <a href="https://leriezplace.com/product-category/hair/"><img src="assets/circles/hair.jpg" alt="" />Hair</a>
-    <a href="https://leriezplace.com/product-category/beauty/"><img src="assets/circles/beauty.jpg" alt="" />Beauty</a>
-    <a href="https://leriezplace.com/product-category/lashes/"><img src="assets/circles/lashes.jpg" alt="" />Lashes</a>
-    <a href="https://leriezplace.com/product-category/lipgloss/"><img src="assets/circles/lipgloss.jpg" alt="" />Lipgloss</a>
-    <a href="https://leriezplace.com/product-category/tools/"><img src="assets/circles/tools.jpg" alt="" />Tools</a>
-    <a href="https://leriezplace.com/#booking"><img src="assets/circles/book.jpg" alt="" />Book</a>
-  </div>
-  </div>
-
-  <section class="edit">
-  <section class="band">
-    <div class="kicker">The Christmas collection</div>
-    <h2>Style for every story</h2>
-    <p>Festive units, custom lace, and gifts that actually get worn.</p>
-  </section>
-  <div class="grid">
-    <a class="card" href="https://leriezplace.com/product/14-vietnamese-bonestraight-straight-300g/"><span class="tag">Holiday Favorite</span><img src="assets/products/bonestraight.jpg" alt="14 inch Vietnamese bonestraight" /><h3>Bone-straight</h3><p>HD lace. Steal the dinner-table lighting.</p><span class="explore">Explore →</span></a>
-    <a class="card" href="https://leriezplace.com/product/18-warm-blonde-donor-bouncy-400g/"><img src="assets/products/blonde-bouncy.jpg" alt="Warm blonde donor bouncy" /><h3>Body wave</h3><p>All I want for Christmas is this frontal.</p><span class="explore">Explore →</span></a>
-    <a class="card" href="https://leriezplace.com/product/baby-curls-8/"><span class="tag">Gift Ready</span><img src="assets/products/baby-curls.jpg" alt="Baby curls unit" /><h3>Deep wave</h3><p>Mistletoe is unemployed this year.</p><span class="explore">Explore →</span></a>
-    <a class="card" href="https://leriezplace.com/product/cajun-brown/"><img src="assets/products/cajun-brown.jpg" alt="Cajun brown unit" /><h3>Espresso layers</h3><p>Gift yourself. The wrapping is the hairline.</p><span class="explore">Explore →</span></a>
-  </div>
-  </section>
-
-  <section class="special">
-    <img src="assets/gift.jpg" alt="Santa gifting bags of hair" loading="lazy" />
-    <div class="special-copy">
-      <div class="kicker">Holiday special</div>
-      <h2>More joy, better edges</h2>
-      <p>Yule be late to dinner because of the mirror. Beautifully packed. Ships before the in-laws arrive.</p>
-      <a class="btn gold" href="https://leriezplace.com/shop/">Shop the offer</a>
+  <section class="collection wrap" id="collection">
+    <div class="collection-head">
+      <div>
+        <div class="kicker">The Christmas collection</div>
+        <h2>Style for every story</h2>
+      </div>
+      <p>Festive units, custom lace, and gifts that actually get worn. Gift-wrap eligible on selected pieces.</p>
+    </div>
+    <div class="bento">
+      <a class="bento-card tall" href="https://leriezplace.com/product/14-vietnamese-bonestraight-straight-300g/">
+        <span class="badge">Holiday Favorite</span>
+        <img src="assets/products/bonestraight.jpg" alt="14 inch Vietnamese bonestraight" />
+        <div class="bento-meta">
+          <h3>14″ Vietnamese Bone-straight</h3>
+          <p>HD lace. Steal the dinner-table lighting.</p>
+          <div class="price">₦320,000.00</div>
+          <span class="gift-note">Gift-wrap eligible</span>
+          <span class="explore">Explore →</span>
+        </div>
+      </a>
+      <a class="bento-card mid" href="https://leriezplace.com/product/18-warm-blonde-donor-bouncy-400g/">
+        <img src="assets/products/blonde-bouncy.jpg" alt="Warm blonde donor bouncy" />
+        <div class="bento-meta">
+          <h3>Body wave — Warm blonde donor bouncy</h3>
+          <p>All I want for Christmas is this frontal.</p>
+          <span class="explore">Explore →</span>
+        </div>
+      </a>
+      <a class="bento-card sm" href="https://leriezplace.com/product/baby-curls-8/">
+        <span class="badge">Gift Ready</span>
+        <img src="assets/products/baby-curls.jpg" alt="Baby curls unit" />
+        <div class="bento-meta">
+          <h3>Deep wave — Baby curls</h3>
+          <p>Mistletoe is unemployed this year.</p>
+          <span class="gift-note">Gift-wrap eligible</span>
+          <span class="explore">Explore →</span>
+        </div>
+      </a>
+      <a class="bento-card wide" href="https://leriezplace.com/product/cajun-brown/">
+        <img src="assets/products/cajun-brown.jpg" alt="Cajun brown espresso layered unit" />
+        <div class="bento-meta">
+          <h3>Espresso layers — Cajun brown</h3>
+          <p>Gift yourself. The wrapping is the hairline. Holiday note: we pack units for gifting with complimentary festive wrap on request.</p>
+          <span class="gift-note">Gift-wrap eligible</span>
+          <span class="explore">Explore →</span>
+        </div>
+      </a>
     </div>
   </section>
-  <div class="trust">
-    <div>Free shipping on selected orders</div>
-    <div>Beautifully packed</div>
-    <div>Easy returns, 30 days</div>
-  </div>
 
-  <div class="split">
-  <section class="rewards" id="rewards">
-    <div class="section-kicker">Free to join</div>
-    <h2>Leriez Place Rewards Club</h2>
-    <p>Every member gets a unique ID. Earn points when you shop, refer friends, and redeem for discounts on wigs and installs.</p>
-    <a class="btn" href="https://leriezplace.com/#rewards">Join free</a>
-  </section>
-  <section class="types">
-    <div class="kicker">Shop by type</div>
-    <h2>100% human hair</h2>
-    <div class="type-row">
-      <a href="https://leriezplace.com/product-category/ready-made/">Ready-Made</a>
-      <a href="https://leriezplace.com/product-category/custom/">Custom</a>
-      <a href="https://leriezplace.com/product-category/bundles/">Bundles</a>
-      <a href="https://leriezplace.com/product-category/sale/">Sale</a>
-      <a href="https://leriezplace.com/product-category/straight/">Straight</a>
-      <a href="https://leriezplace.com/product-category/curly/">Curly</a>
+  <section class="showcase wrap" id="featured">
+    <aside class="showcase-rail">
+      <div class="kicker">100% human hair</div>
+      <h2>Featured wigs</h2>
+      <p>Filter the floor by construction and texture. Prices shown are live shop figures in Naira — no placeholders.</p>
+      <div class="filter-pills" id="filters" role="tablist" aria-label="Filter featured units">
+        <button type="button" role="tab" aria-selected="true" data-filter="all">All</button>
+        <button type="button" role="tab" aria-selected="false" data-filter="ready">Ready-Made</button>
+        <button type="button" role="tab" aria-selected="false" data-filter="straight">Straight</button>
+        <button type="button" role="tab" aria-selected="false" data-filter="waves">Waves &amp; Curls</button>
+        <button type="button" role="tab" aria-selected="false" data-filter="closures">Closures &amp; Frontals</button>
+        <button type="button" role="tab" aria-selected="false" data-filter="gift">Gift Ready</button>
+      </div>
+    </aside>
+    <div class="product-grid" id="product-grid">
+      <a class="product-card" data-tags="ready straight closures" href="https://leriezplace.com/product/10-bonestraight-55-hd-lace-closure/">
+        <img src="assets/products/hd-closure.jpg" alt="10 inch bonestraight 5x5 HD lace closure" />
+        <h3>10″ Bonestraight 5×5 HD closure</h3>
+        <span class="price">₦100,000.00</span>
+      </a>
+      <a class="product-card" data-tags="ready straight gift" href="https://leriezplace.com/product/14-vietnamese-bonestraight-straight-300g/">
+        <img src="assets/products/bonestraight.jpg" alt="14 inch Vietnamese bonestraight 300g" />
+        <h3>14″ Vietnamese Bonestraight 300g</h3>
+        <span class="price">₦320,000.00</span>
+      </a>
+      <a class="product-card" data-tags="ready waves" href="https://leriezplace.com/product/blonde-bouncy-12-100g/">
+        <img src="assets/products/blonde-12.jpg" alt="Blonde bouncy 12 inch 100g" />
+        <h3>Blonde bouncy 12″ 100g</h3>
+        <span class="price">₦95,000.00</span>
+      </a>
+      <a class="product-card" data-tags="ready waves gift" href="https://leriezplace.com/product/burgundy-glamour-waves/">
+        <img src="assets/products/burgundy-waves.jpg" alt="Burgundy glamour waves" />
+        <h3>Burgundy glamour waves</h3>
+        <span class="price">₦420,000.00</span>
+      </a>
+      <a class="product-card" data-tags="ready waves gift" href="https://leriezplace.com/product/18-warm-blonde-donor-bouncy-400g/">
+        <img src="assets/products/blonde-bouncy.jpg" alt="18 inch warm blonde donor bouncy" />
+        <h3>Warm blonde donor bouncy 18″</h3>
+      </a>
+      <a class="product-card" data-tags="ready waves gift" href="https://leriezplace.com/product/baby-curls-8/">
+        <img src="assets/products/baby-curls.jpg" alt="Baby curls unit" />
+        <h3>Baby curls</h3>
+      </a>
+      <a class="product-card" data-tags="ready waves" href="https://leriezplace.com/product/cajun-brown/">
+        <img src="assets/products/cajun-brown.jpg" alt="Cajun brown unit" />
+        <h3>Cajun brown</h3>
+      </a>
     </div>
   </section>
-  </div>
-  <section class="products" id="shop">
-    <div class="section-kicker">Best sellers</div>
-    <h2>Featured wigs</h2>
-    <div class="products-grid">
-      <a href="https://leriezplace.com/product/10-bonestraight-55-hd-lace-closure/"><img src="assets/products/hd-closure.jpg" alt="10 inch bonestraight 5x5 HD lace closure" loading="lazy" /><h3>10″ Bonestraight 5×5 HD closure</h3><span class="price">₦100,000.00</span></a>
-      <a href="https://leriezplace.com/product/14-vietnamese-bonestraight-straight-300g/"><img src="assets/products/bonestraight.jpg" alt="14 inch Vietnamese bonestraight 300g" loading="lazy" /><h3>14″ Vietnamese Bonestraight 300g</h3><span class="price">₦320,000.00</span></a>
-      <a href="https://leriezplace.com/product/blonde-bouncy-12-100g/"><img src="assets/products/blonde-12.jpg" alt="Blonde bouncy 12 inch 100g" loading="lazy" /><h3>Blonde bouncy 12″ 100g</h3><span class="price">₦95,000.00</span></a>
-      <a href="https://leriezplace.com/product/burgundy-glamour-waves/"><img src="assets/products/burgundy-waves.jpg" alt="Burgundy glamour waves" loading="lazy" /><h3>Burgundy glamour waves</h3><span class="price">₦420,000.00</span></a>
+
+  <section class="magazine wrap" id="rewards">
+    <div class="magazine-visual">
+      <img src="assets/gift.jpg" alt="Santa gifting bags of hair" />
+      <div class="caption">Holiday special · more joy, better edges</div>
+    </div>
+    <div class="magazine-panel">
+      <div class="kicker">Free to join</div>
+      <h2>Leriez Place Rewards Club</h2>
+      <p>Every member gets a unique ID. Earn points when you shop, refer friends, and redeem for discounts on wigs and installs. Yule be late to dinner because of the mirror — beautifully packed, ships before the in-laws arrive.</p>
+      <div class="perk-list">
+        <button class="perk" type="button" aria-expanded="false" aria-controls="perk-1" id="perk-btn-1">Preview Rewards Perks <span>+</span></button>
+        <div class="perk-body" id="perk-1">Points on every qualifying order, member-only festive wrap, and priority booking notes on WhatsApp when you share your Rewards ID.</div>
+        <button class="perk" type="button" aria-expanded="false" aria-controls="perk-2" id="perk-btn-2">How Rewards ID works <span>+</span></button>
+        <div class="perk-body" id="perk-2">Your ID is unique. Add it in the booking builder or checkout notes so the studio can apply points and recognise returning clients.</div>
+      </div>
+      <a class="btn" href="https://leriezplace.com/#rewards">Join free</a>
+      <a class="btn ghost" href="https://leriezplace.com/shop/" style="margin-left:8px">Shop the offer</a>
     </div>
   </section>
-  <div class="lower">
-  <section class="guides" id="guides">
-    <div class="section-kicker">New here?</div>
-    <h2>Help me choose</h2>
-    <p>Not sure where to start? Our guides walk you through lace types, densities, and what suits your lifestyle.</p>
-  </section>
+
+  <div id="booking" class="anchor-alias" aria-hidden="true"></div>
   <section class="booking" id="book">
-    <div>
-      <div class="kicker">Our services</div>
-      <h2>Book your install</h2>
-      <p>Walk-in space available. Professional installs, consultations, and fittings.</p>
-      <a class="btn gold" href="https://leriezplace.com/#booking">Book on WhatsApp</a>
+    <div class="booking-visual">
+      <img src="assets/hero/hero-2.jpg" alt="Body wave install look in studio light" />
+      <div class="overlay">
+        <div class="kicker">Our services</div>
+        <h2>Festive install &amp; fitting concierge</h2>
+        <span class="walk-in">Walk-in space available</span>
+        <p class="address">F283, M.I. Wushishi Estate, Chanchaga LGA, Minna, Niger State, Nigeria</p>
+        <div class="guides" id="guide-tabs" role="tablist" aria-label="Help me choose">
+          <button type="button" role="tab" aria-selected="true" data-copy="HD lace is the thinnest, most undetectable option for hairlines under festive lighting. Best when you want a melt with tinted concealer and a natural part.">HD Lace Guide</button>
+          <button type="button" role="tab" aria-selected="false" data-copy="Density is how full the unit feels. Lighter densities sit naturally for daytime; 300g Vietnamese bonestraight is a statement length for dinners and portraits. Match length to your lifestyle, not just the photo.">Density &amp; Length</button>
+          <button type="button" role="tab" aria-selected="false" data-copy="Ready-made units ship as styled. Custom fittings adjust cap, density, and lace tint on your head shape. Bring a Leriez unit or start from a consultation if you are unsure.">Custom vs. Ready-Made</button>
+        </div>
+        <p class="guide-copy" id="guide-copy">HD lace is the thinnest, most undetectable option for hairlines under festive lighting. Best when you want a melt with tinted concealer and a natural part.</p>
+      </div>
     </div>
-    <img src="assets/hero/hero-2.jpg" alt="Body wave install look" loading="lazy" />
+    <form class="booking-builder" id="booking-builder" action="#" method="get">
+      <div class="kicker">Book your install</div>
+      <h2>Tell us the look</h2>
+
+      <div class="field">
+        <span id="service-label">Service type</span>
+        <div class="pills" id="service-pills" role="group" aria-labelledby="service-label">
+          <button type="button" aria-selected="true" data-value="HD Lace Wig Install">HD Lace Wig Install</button>
+          <button type="button" aria-selected="false" data-value="Custom Wig Fitting">Custom Wig Fitting</button>
+          <button type="button" aria-selected="false" data-value="Bridal / Festive Styling">Bridal / Festive Styling</button>
+          <button type="button" aria-selected="false" data-value="Wig Revamp &amp; Maintenance">Wig Revamp &amp; Maintenance</button>
+          <button type="button" aria-selected="false" data-value="1-on-1 Consultation">1-on-1 Consultation</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <span id="unit-label">Unit status</span>
+        <div class="pills" id="unit-pills" role="group" aria-labelledby="unit-label">
+          <button type="button" aria-selected="true" data-value="I'm bringing a Leriez unit">I'm bringing a Leriez unit</button>
+          <button type="button" aria-selected="false" data-value="I'm buying a new unit">I'm buying a new unit</button>
+          <button type="button" aria-selected="false" data-value="Other human hair unit">Other human hair unit</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="book-date">Preferred date</label>
+        <input id="book-date" name="date" type="date" />
+      </div>
+
+      <div class="field">
+        <span id="slot-label">Time window</span>
+        <div class="pills" id="slot-pills" role="group" aria-labelledby="slot-label">
+          <button type="button" aria-selected="true" data-value="Morning 10am–1pm">Morning 10am–1pm</button>
+          <button type="button" aria-selected="false" data-value="Afternoon 1pm–4pm">Afternoon 1pm–4pm</button>
+          <button type="button" aria-selected="false" data-value="Late Festive 4pm–7pm">Late Festive 4pm–7pm</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="book-rewards">Rewards ID (optional)</label>
+        <input id="book-rewards" name="rewards" type="text" autocomplete="off" placeholder="Your member ID" />
+      </div>
+      <div class="field">
+        <label for="book-note">Note (optional)</label>
+        <textarea id="book-note" name="note" placeholder="Lace tint, density, or gifting timing"></textarea>
+      </div>
+
+      <div class="summary" id="book-summary" aria-live="polite"></div>
+      <div class="booking-actions">
+        <a class="btn gold" id="book-whatsapp" href="https://leriezplace.com/#booking" target="_blank" rel="noopener">Send on WhatsApp</a>
+        <button class="btn light" type="button" id="book-copy">Copy summary</button>
+      </div>
+    </form>
   </section>
-  </div>
+
   <section class="ig"><a href="https://www.instagram.com/leriez_place/">@leriez_place on Instagram</a></section>
-  <footer>
+
+  <footer class="site">
     <div class="footer-grid">
       <div>
         <img class="footer-logo" src="assets/brand/leriez-wordmark-transparent.png" alt="Leriez Place" />
@@ -357,7 +327,7 @@
       </div>
       <div>
         <h3>Help</h3>
-        <a href="https://leriezplace.com/#guides">Help Me Choose</a>
+        <a href="#book">Help Me Choose</a>
         <a href="https://leriezplace.com/faq/">FAQ</a>
         <a href="https://leriezplace.com/returns/">Return &amp; Refund Policy</a>
         <a href="https://leriezplace.com/shipping/">Shipping</a>
@@ -365,62 +335,25 @@
       </div>
       <div>
         <h3>Connect</h3>
-        <a href="https://leriezplace.com/#booking">WhatsApp</a>
+        <a href="https://wa.me/2347049889936">WhatsApp</a>
         <a href="https://www.instagram.com/leriez_place/">Instagram</a>
-        <a href="https://leriezplace.com/#booking">Book with Leriez</a>
+        <a href="#book">Book with Leriez</a>
         <a href="https://leriezplace.com/privacy-policy/">Privacy</a>
         <a href="https://leriezplace.com/terms/">Terms</a>
       </div>
     </div>
-    <p>© 2026 Leriez Place. All rights reserved.</p>
+    <p class="legal">© 2026 Leriez Place. All rights reserved. Free shipping over selected orders · Secure checkout · Easy returns — conditions apply.</p>
   </footer>
+
   <nav class="mobile-bottom" aria-label="Quick mobile navigation">
-    <a href="https://leriezplace.com/">⌂<span>Home</span></a>
+    <a href="https://leriezplace.com/" data-watch>⌂<span>Home</span></a>
     <a href="https://leriezplace.com/shop/">✦<span>Shop</span></a>
-    <a href="https://leriezplace.com/#booking">✂<span>Book</span></a>
-    <a href="https://leriezplace.com/#booking">💬<span>Chat</span></a>
+    <a href="#book" data-watch>✂<span>Book</span></a>
+    <a href="https://wa.me/2347049889936">💬<span>Chat</span></a>
     <a href="https://leriezplace.com/cart/">🛒<span>Cart</span></a>
   </nav>
-  <script src="assets/js/hero-snow.js"></script>
-  <script>
-    var slides = document.querySelectorAll(".hero .slide");
-    var names = ["Santa’s gift", "Body wave", "Lace close-up", "Espresso layers"];
-    var lines = [
-      "Santa came through with the units.",
-      "Ho-ho-hold that hairline.",
-      "HD lace under the tree lights.",
-      "All I want for Christmas is this frontal."
-    ];
-    var tabs = document.getElementById("tabs");
-    var i = 0;
-    names.forEach(function (name, n) {
-      var b = document.createElement("button");
-      b.type = "button";
-      b.setAttribute("role", "tab");
-      b.innerHTML = "<b>0" + (n + 1) + "</b> " + name;
-      if (n === 0) b.className = "on";
-      b.onclick = function () { show(n); };
-      tabs.appendChild(b);
-    });
-    function show(n) {
-      slides[i].classList.remove("is-on");
-      tabs.children[i].classList.remove("on");
-      i = n % slides.length;
-      slides[i].classList.add("is-on");
-      tabs.children[i].classList.add("on");
-      document.getElementById("line").textContent = lines[i] + " Beautiful units for brighter days.";
-    }
-    setInterval(function () { show(i + 1); }, 4500);
 
-    var toggle = document.querySelector(".menu-toggle");
-    var panel = document.getElementById("mobile-panel");
-    if (toggle && panel) {
-      toggle.addEventListener("click", function () {
-        var open = panel.classList.toggle("is-open");
-        panel.hidden = !open;
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      });
-    }
-  </script>
+  <script src="assets/js/hero-snow.js"></script>
+  <script src="assets/js/editorial.js"></script>
 </body>
 </html>
