@@ -75,6 +75,7 @@
     var price = qs("#look-price");
     var view = qs("#look-view");
     var book = qs("#look-book");
+    var caption = qs("#hero-caption");
     var buttons = tabs ? qsa('[role="tab"]', tabs) : [];
     var i = 0;
 
@@ -91,6 +92,10 @@
       }
       if (view) view.href = look.href;
       if (book) book.href = "#book";
+      if (caption) {
+        var num = String(i + 1).padStart(2, "0");
+        caption.textContent = "Look " + num + " · " + look.name + " · Minna studio";
+      }
     }
 
     if (book) {
